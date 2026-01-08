@@ -1,3 +1,4 @@
+import styles from "./Header.module.css";
 import logo from "../../assets/adsmockup_logo.png";
 
 const Header = () => {
