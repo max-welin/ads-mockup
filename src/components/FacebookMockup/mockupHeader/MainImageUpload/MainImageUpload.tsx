@@ -24,7 +24,7 @@ const MainImageUpload = ({ showButton }: {showButton: boolean}) => {
       />
 
       <label htmlFor="main-image-upload" className={`${styles.circleButton} ${showButton ? styles.show : ""}`}>
-        <SquarePen size={24} />
+        <SquarePen size={26} />
       </label>
     
     </>

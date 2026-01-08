@@ -33,7 +33,7 @@
     & .headerTitleInput {
         font-size: 12px;
         font-weight: 600;
-        
+        width: fit-content;
     }
     
     & > p {
@@ -59,12 +59,12 @@
 }
 
 .editable {
-    width: auto;
+    all: unset;
+    background: transparent;
     border: 1px dotted transparent;
     padding: 0;
     background: transparent;
     outline: none;
-    color: var(--main-black);
     white-space: pre-wrap;
     word-break: break-word;
 }
@@ -95,35 +95,13 @@
     }
 }
 
-.fileInput {
-  display: none;
-}
-
-.circleButton {
-  position: absolute;
-  opacity: 0;
-    top: 50%;
-    left: 50%;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  cursor: pointer;
-  transition: all 0.15s ease, color 0.15s ease, transform 0.05s ease;
-}
-
-.show {
-    opacity: 1;
-}
-
-.circleButton:hover {
-  transform: scale(1.1);
-}
-
-.circleButton:active {
-  transform: scale(1);
+.inputReset {
+  appearance: none;
+  background: transparent;
+  border: 1px dotted transparent;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font: inherit;
+  color: inherit;
 }

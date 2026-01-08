@@ -1,0 +1,39 @@
+.ctaContainer {
+    width: 100%;
+    background-color: #F0F2F5;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 11px;
+    color: var(--main-gray);
+    gap: 3px;
+}
+
+.url {
+    text-transform: uppercase;
+    min-width: fit-content;
+}
+
+.title {
+    color: var(--main-black);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.ctaButton {
+    background-color: #e4e6eb;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    height: fit-content;
+}
