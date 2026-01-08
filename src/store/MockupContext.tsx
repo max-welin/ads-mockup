@@ -9,12 +9,14 @@ import {
 interface MockupContextValue {
   headerTitle: string;
   headerImg: string;
+  mainImg: string | File;
   headerDescription: string;
   ctaText: string;
   url: string;
   ctaSectionDescription: string;
   setHeaderTitle: Dispatch<SetStateAction<string>>;
   setHeaderImg: Dispatch<SetStateAction<string>>;
+  setMainImg: Dispatch<SetStateAction<string | File>>;
   setHeaderDescription: Dispatch<SetStateAction<string>>;
   setCtaText: Dispatch<SetStateAction<string>>;
   setUrl: Dispatch<SetStateAction<string>>;
@@ -30,6 +32,7 @@ export const MockupContext = createContext<MockupContextValue | null>(null);
 const MockupProvider = ({ children }: MockupProviderProps) => {
   const [headerTitle, setHeaderTitle] = useState("Land Rover");
   const [headerImg, setHeaderImg] = useState("/src/assets/land-rover-logo.jpg");
+  const [mainImg, setMainImg] = useState<string | File>("/src/assets/land_rover.jpg");
   const [headerDescription, setHeaderDescription] = useState(
     "Discover Land Rover's luxurious SUVs. Ready for adventure."
   );
@@ -42,12 +45,14 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
   const value: MockupContextValue = {
     headerTitle,
     headerImg,
+    mainImg,
     headerDescription,
     ctaText,
     url,
     ctaSectionDescription,
     setHeaderTitle,
     setHeaderImg,
+    setMainImg,
     setHeaderDescription,
     setCtaText,
     setUrl,

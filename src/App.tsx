@@ -8,7 +8,7 @@ function App() {
   return (
     <MockupProvider>
       <Header />
-      <FacebookMockup />
+        <FacebookMockup />
       <Footer />
     </MockupProvider>
   )
