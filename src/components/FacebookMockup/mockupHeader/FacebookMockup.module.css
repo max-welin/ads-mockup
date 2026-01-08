@@ -1,9 +1,9 @@
 .mockup {
     background-color: white;
     width: 558px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #ddddddb8;
 }
 
 .mockup:hover .editable {
@@ -13,26 +13,26 @@
 .mockupHeader {
     display: flex;
     flex-direction: row;
-    margin: 16px;
+    margin: 12px;
     gap: 6px;
-    
     
     & img {
         border-radius: 50%;
-        height: 32px;
-        width: 32px;
+        height: 40px;
+        width: 40px;
     }
 }
 
 .headerTitleContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: 500px;
     
-    & .headerTitleInput {
-        font-size: 12px;
+    & .title {
+        font-size: 15px;
         font-weight: 600;
+        line-height: 1;
         width: fit-content;
     }
     
@@ -41,7 +41,7 @@
         gap: 3px;
         align-items: center;
         line-height: 0;
-        font-size: 10px;
+        font-size: 13px;
         color: var(--main-gray);
         
         & > span {
@@ -53,7 +53,7 @@
 .buttonContainer {
     margin-left: auto;
     display: flex;
-    gap: 6px;
+    gap: 12px;
     align-items: center;
     color: var(--main-gray);
 }
@@ -65,20 +65,23 @@
     padding: 0;
     background: transparent;
     outline: none;
-    white-space: pre-wrap;
     word-break: break-word;
 }
 
 .textSection {
-  margin: 16px;
-  font-size: 12px;
-  font-weight: 600;
+  margin: 12px;
+  font-size: 15px;
+  line-height: 1.3333;
+  font-weight: 400;
+  white-space: pre-wrap;
+  word-break: break-word;
+  display: block;
 }
 
 .readMoreButton,
 .readLessButton {
   cursor: pointer !important;
-  color: var(--main-gray);
+  font-weight: 600;
   white-space: nowrap;
   margin-left: 4px;
 }

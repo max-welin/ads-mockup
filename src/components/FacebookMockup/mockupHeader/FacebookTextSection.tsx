@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import styles from "./FacebookMockup.module.css";
 import { useMockupContext } from "../../../hooks/useMockupContext";
 
-const MAX_CHARS = 150;
+const MAX_CHARS = 130;
 
 const FacebookTextSection = () => {
   const { headerDescription, setHeaderDescription } = useMockupContext();

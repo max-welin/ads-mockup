@@ -11,29 +11,28 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-size: 11px;
+    font-size: 15px;
     color: var(--main-gray);
-    gap: 3px;
 }
 
 .url {
     text-transform: uppercase;
-    min-width: fit-content;
+    font-size: 13px;
 }
 
 .title {
     color: var(--main-black);
     font-weight: 600;
-    font-size: 13px;
+    font-size: 17px;
 }
 
 .ctaButton {
     background-color: #e4e6eb;
     padding: 8px 10px;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     display: flex;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 8px;
     height: fit-content;
 }

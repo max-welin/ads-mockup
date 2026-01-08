@@ -12,15 +12,14 @@ const FacebookMockupHeader = () => {
         <img src={headerImg} alt={`${headerTitle} logo`} />
 
         <div className={styles.headerTitleContainer}>
-          <input
-            maxLength={60}
-            className={`${styles.headerTitleInput} ${styles.editable}`}
-            value={headerTitle}
-            onChange={(e) => setHeaderTitle(e.target.value)}
-            spellCheck={false}
-            aria-label="Header title"
-            style={{ width: `${Math.max(headerTitle.length + 2, 1)}ch` }}
-          />
+             <span
+          contentEditable
+          suppressContentEditableWarning
+          className={`${styles.title} ${styles.editable}`}
+          onBlur={(e) => setHeaderTitle(e.currentTarget.textContent ?? "")}
+        >
+          {headerTitle}
+        </span>
 
           <p>
             Sponsored <span aria-hidden="true"> · </span>
@@ -29,8 +28,8 @@ const FacebookMockupHeader = () => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <Ellipsis size={18} />
-          <X size={20} />
+          <Ellipsis size={20} />
+          <X size={22} />
         </div>
 
       </div>
