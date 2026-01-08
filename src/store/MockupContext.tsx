@@ -12,7 +12,7 @@ interface MockupContextValue {
   mainImg: string;
   headerDescription: string;
   ctaButtonText: string;
-  ctaTitle: string,
+  ctaTitle: string;
   url: string;
   ctaSectionDescription: string;
   setHeaderTitle: Dispatch<SetStateAction<string>>;
@@ -41,9 +41,8 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
   const [ctaButtonText, setCtaButtonText] = useState("Learn more");
   const [ctaTitle, setCtaTitle] = useState("Land Rover Velar");
   const [url, setUrl] = useState("www.landrover.com");
-  const [ctaSectionDescription, setCtaSectionDescription] = useState(
-    "Book a test drive"
-  );
+  const [ctaSectionDescription, setCtaSectionDescription] =
+    useState("Book a test drive");
 
   const value: MockupContextValue = {
     headerTitle,
@@ -65,9 +64,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
   };
 
   return (
-    <MockupContext.Provider value={value}>
-      {children}
-    </MockupContext.Provider>
+    <MockupContext.Provider value={value}>{children}</MockupContext.Provider>
   );
 };
 

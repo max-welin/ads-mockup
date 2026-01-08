@@ -1,17 +1,16 @@
-import FacebookMockup from "./components/FacebookMockup/mockupHeader/FacebookMockup."
-import Footer from "./components/Footer/Footer"
-import Header from "./components/Header/Header"
-import MockupProvider from "./store/MockupContext"
+import FacebookMockup from "./components/FacebookMockup/mockupHeader/FacebookMockup.";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import MockupProvider from "./store/MockupContext";
 
 function App() {
-
   return (
     <MockupProvider>
       <Header />
-        <FacebookMockup />
+      <FacebookMockup />
       <Footer />
     </MockupProvider>
-  )
+  );
 }
 
-export default App
+export default App;

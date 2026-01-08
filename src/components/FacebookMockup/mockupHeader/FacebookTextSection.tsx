@@ -22,9 +22,7 @@ const FacebookTextSection = () => {
         className={styles.editable}
         contentEditable
         suppressContentEditableWarning
-        onBlur={(e) =>
-          setHeaderDescription(e.currentTarget.textContent ?? "")
-        }
+        onBlur={(e) => setHeaderDescription(e.currentTarget.textContent ?? "")}
       >
         {visibleText}
       </span>

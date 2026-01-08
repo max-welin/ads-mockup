@@ -1,18 +1,17 @@
-import { Ellipsis, X } from 'lucide-react';
-import { useMockupContext } from '../../../hooks/useMockupContext';
-import SponsoredIcon from '../../Shared/SponsoredIcon';
-import styles from './FacebookMockup.module.css'
+import { Ellipsis, X } from "lucide-react";
+import { useMockupContext } from "../../../hooks/useMockupContext";
+import SponsoredIcon from "../../Shared/SponsoredIcon";
+import styles from "./FacebookMockup.module.css";
 
 const FacebookMockupHeader = () => {
-
-    const { headerImg, headerTitle, setHeaderTitle } = useMockupContext();
+  const { headerImg, headerTitle, setHeaderTitle } = useMockupContext();
 
   return (
     <div className={styles.mockupHeader}>
-        <img src={headerImg} alt={`${headerTitle} logo`} />
+      <img src={headerImg} alt={`${headerTitle} logo`} />
 
-        <div className={styles.headerTitleContainer}>
-             <span
+      <div className={styles.headerTitleContainer}>
+        <span
           contentEditable
           suppressContentEditableWarning
           className={`${styles.title} ${styles.editable}`}
@@ -21,19 +20,18 @@ const FacebookMockupHeader = () => {
           {headerTitle}
         </span>
 
-          <p>
-            Sponsored <span aria-hidden="true"> · </span>
-            <SponsoredIcon />
-          </p>
-        </div>
-
-        <div className={styles.buttonContainer}>
-          <Ellipsis size={20} />
-          <X size={22} />
-        </div>
-
+        <p>
+          Sponsored <span aria-hidden="true"> · </span>
+          <SponsoredIcon />
+        </p>
       </div>
-  )
-}
 
-export default FacebookMockupHeader
+      <div className={styles.buttonContainer}>
+        <Ellipsis size={20} />
+        <X size={22} />
+      </div>
+    </div>
+  );
+};
+
+export default FacebookMockupHeader;

@@ -17,7 +17,7 @@ const FacebookCtaSection = () => {
   return (
     <div className={styles.ctaContainer}>
       <div className={styles.titleContainer}>
-       <span
+        <span
           contentEditable
           suppressContentEditableWarning
           className={`${styles.url} ${mockupStyles.editable}`}
@@ -39,14 +39,16 @@ const FacebookCtaSection = () => {
           contentEditable
           suppressContentEditableWarning
           className={mockupStyles.editable}
-          onBlur={(e) => setCtaSectionDescription(e.currentTarget.textContent ?? "")}
+          onBlur={(e) =>
+            setCtaSectionDescription(e.currentTarget.textContent ?? "")
+          }
         >
           {ctaSectionDescription}
         </span>
       </div>
 
       <div className={styles.ctaButton}>
-         <span
+        <span
           contentEditable
           suppressContentEditableWarning
           className={mockupStyles.editable}

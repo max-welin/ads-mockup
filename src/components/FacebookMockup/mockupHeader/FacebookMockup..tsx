@@ -1,4 +1,4 @@
-import styles from "./FacebookMockup.module.css"
+import styles from "./FacebookMockup.module.css";
 import FacebookImgSection from "./FacebookImgSection";
 import FacebookMockupHeader from "./FacebookMockHeader";
 import FacebookTextSection from "./FacebookTextSection";

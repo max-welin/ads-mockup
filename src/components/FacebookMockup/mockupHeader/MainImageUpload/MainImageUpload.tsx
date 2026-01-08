@@ -1,8 +1,8 @@
 import { SquarePen } from "lucide-react";
-import styles from "./MainImageUpload.module.css"
+import styles from "./MainImageUpload.module.css";
 import { useMockupContext } from "../../../../hooks/useMockupContext";
 
-const MainImageUpload = ({ showButton }: {showButton: boolean}) => {
+const MainImageUpload = ({ showButton }: { showButton: boolean }) => {
   const { setMainImg } = useMockupContext();
 
   return (
@@ -23,10 +23,12 @@ const MainImageUpload = ({ showButton }: {showButton: boolean}) => {
         }}
       />
 
-      <label htmlFor="main-image-upload" className={`${styles.circleButton} ${showButton ? styles.show : ""}`}>
+      <label
+        htmlFor="main-image-upload"
+        className={`${styles.circleButton} ${showButton ? styles.show : ""}`}
+      >
         <SquarePen size={26} />
       </label>
-    
     </>
   );
 };

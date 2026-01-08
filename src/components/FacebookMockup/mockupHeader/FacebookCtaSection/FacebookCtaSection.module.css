@@ -1,38 +1,38 @@
 .ctaContainer {
-    width: 100%;
-    background-color: #F0F2F5;
-    padding: 10px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  background-color: #f0f2f5;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .titleContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 15px;
-    color: var(--main-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 15px;
+  color: var(--main-gray);
 }
 
 .url {
-    text-transform: uppercase;
-    font-size: 13px;
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
 .title {
-    color: var(--main-black);
-    font-weight: 600;
-    font-size: 17px;
+  color: var(--main-black);
+  font-weight: 600;
+  font-size: 17px;
 }
 
 .ctaButton {
-    background-color: #e4e6eb;
-    padding: 8px 10px;
-    font-size: 15px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    height: fit-content;
+  background-color: #e4e6eb;
+  padding: 8px 10px;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  height: fit-content;
 }
