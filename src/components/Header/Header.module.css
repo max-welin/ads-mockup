@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 20px;
+}
+
+img {
+    width: 35px;
+}
+
+span {
+    font-size: 18px;
+    font-weight: 200;
+
+    & > strong {
+        font-weight: 700;
+    }
+}
