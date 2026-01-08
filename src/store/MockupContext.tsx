@@ -29,14 +29,14 @@ export const MockupContext = createContext<MockupContextValue | null>(null);
 
 const MockupProvider = ({ children }: MockupProviderProps) => {
   const [headerTitle, setHeaderTitle] = useState("Land Rover");
-  const [headerImg, setHeaderImg] = useState("/land_rover.jpg");
+  const [headerImg, setHeaderImg] = useState("/src/assets/land-rover-logo.jpg");
   const [headerDescription, setHeaderDescription] = useState(
-    "Explore uncompromising capability and design."
+    "Discover Land Rover's luxurious SUVs. Ready for adventure."
   );
-  const [ctaText, setCtaText] = useState("Discover more");
-  const [url, setUrl] = useState("/discover");
+  const [ctaText, setCtaText] = useState("Learn more");
+  const [url, setUrl] = useState("www.landrover.com");
   const [ctaSectionDescription, setCtaSectionDescription] = useState(
-    "Learn more about our latest models and offers."
+    "Book a test drive"
   );
 
   const value: MockupContextValue = {

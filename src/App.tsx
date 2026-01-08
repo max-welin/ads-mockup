@@ -1,14 +1,16 @@
+import FacebookMockup from "./components/FacebookMockup/mockupHeader/FacebookMockup."
 import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
-import { MockupContext } from "./store/MockupContext"
+import MockupProvider from "./store/MockupContext"
 
 function App() {
 
   return (
-    <MockupContext>
+    <MockupProvider>
       <Header />
+      <FacebookMockup />
       <Footer />
-    </MockupContext>
+    </MockupProvider>
   )
 }
 
