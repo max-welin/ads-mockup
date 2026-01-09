@@ -1,7 +1,7 @@
 import { useMockupContext } from "../../../hooks/useMockupContext";
 import sectionStyles from "./FacebookCtaSection.module.css";
 import styles from "../FacebookMockup.module.css";
-import EditableSpan from "../../Shared/EditableSpan";
+import EditableSpan from "../../shared/svg/EditableSpan";
 
 const FacebookCtaSection = () => {
   const {

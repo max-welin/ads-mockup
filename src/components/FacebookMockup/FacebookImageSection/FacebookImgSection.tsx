@@ -5,7 +5,7 @@ import styles from "./FacebookImgSection.module.css";
 
 const FacebookImgSection = () => {
   const [showImageButton, setShowImageButton] = useState(false);
-  const { mainImg } = useMockupContext();
+  const { mainImg, ctaTitle } = useMockupContext();
 
   return (
     <div
@@ -13,7 +13,7 @@ const FacebookImgSection = () => {
       onMouseEnter={() => setShowImageButton(true)}
       onMouseLeave={() => setShowImageButton(false)}
     >
-      <img src={mainImg} alt="" />
+      <img src={mainImg} alt={ctaTitle} />
       <MainImageUpload showButton={showImageButton} />
     </div>
   );

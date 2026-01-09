@@ -2,8 +2,8 @@ import { Ellipsis, X } from "lucide-react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
 import styles from "./FacebookHeader.module.css";
 import facebookMockupStyles from "../FacebookMockup.module.css";
-import GlobeSvg from "../../Shared/GlobeSvg";
-import EditableSpan from "../../Shared/EditableSpan";
+import GlobeSvg from "../../shared/svg/GlobeSvg";
+import EditableSpan from "../../shared/svg/EditableSpan";
 
 const FacebookHeaderSection = () => {
   const { headerImg, headerTitle, setHeaderTitle } = useMockupContext();
