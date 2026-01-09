@@ -1,6 +1,6 @@
 import { SquarePen } from "lucide-react";
-import styles from "./MainImageUpload.module.css";
 import { useMockupContext } from "../../../../hooks/useMockupContext";
+import styles from "./MainImageUpload.module.css";
 
 const MainImageUpload = ({ showButton }: { showButton: boolean }) => {
   const { setMainImg } = useMockupContext();

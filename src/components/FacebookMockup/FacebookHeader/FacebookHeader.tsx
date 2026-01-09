@@ -1,9 +1,11 @@
 import { Ellipsis, X } from "lucide-react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import SponsoredIcon from "../../Shared/SponsoredIcon";
-import styles from "./FacebookMockup.module.css";
+import styles from "./FacebookHeader.module.css";
+import facebookMockupStyles from "../FacebookMockup.module.css";
+import GlobeSvg from "../../Shared/GlobeSvg";
+import EditableSpan from "../../Shared/EditableSpan";
 
-const FacebookMockupHeader = () => {
+const FacebookHeaderSection = () => {
   const { headerImg, headerTitle, setHeaderTitle } = useMockupContext();
 
   return (
@@ -11,18 +13,15 @@ const FacebookMockupHeader = () => {
       <img src={headerImg} alt={`${headerTitle} logo`} />
 
       <div className={styles.headerTitleContainer}>
-        <span
-          contentEditable
-          suppressContentEditableWarning
-          className={`${styles.title} ${styles.editable}`}
-          onBlur={(e) => setHeaderTitle(e.currentTarget.textContent ?? "")}
-        >
-          {headerTitle}
-        </span>
+        <EditableSpan
+          className={`${styles.title} ${facebookMockupStyles.editable}`}
+          text={headerTitle}
+          onBlurFn={setHeaderTitle}
+        />
 
         <p>
           Sponsored <span aria-hidden="true"> · </span>
-          <SponsoredIcon />
+          <GlobeSvg />
         </p>
       </div>
 
@@ -34,4 +33,4 @@ const FacebookMockupHeader = () => {
   );
 };
 
-export default FacebookMockupHeader;
+export default FacebookHeaderSection;

@@ -1,6 +1,8 @@
-import { useState, useRef } from "react";
-import styles from "./FacebookMockup.module.css";
+import { useRef, useState } from "react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
+import styles from "./FacebookHeader.module.css";
+import facebookMockupStyles from "../FacebookMockup.module.css";
+import EditableSpan from "../../Shared/EditableSpan";
 
 const MAX_CHARS = 130;
 
@@ -17,15 +19,12 @@ const FacebookTextSection = () => {
 
   return (
     <div className={styles.textSection}>
-      <span
+      <EditableSpan
+        className={facebookMockupStyles.editable}
+        text={visibleText}
+        onBlurFn={setHeaderDescription}
         ref={spanRef}
-        className={styles.editable}
-        contentEditable
-        suppressContentEditableWarning
-        onBlur={(e) => setHeaderDescription(e.currentTarget.textContent ?? "")}
-      >
-        {visibleText}
-      </span>
+      />
 
       {isOverflowing && !expanded && (
         <span

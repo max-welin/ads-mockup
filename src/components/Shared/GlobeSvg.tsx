@@ -1,4 +1,4 @@
-const SponsoredIcon = () => {
+const GlobeSvg = () => {
   return (
     <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
       <g fillRule="evenodd" transform="translate(-448 -544)">
@@ -22,4 +22,4 @@ const SponsoredIcon = () => {
   );
 };
 
-export default SponsoredIcon;
+export default GlobeSvg;

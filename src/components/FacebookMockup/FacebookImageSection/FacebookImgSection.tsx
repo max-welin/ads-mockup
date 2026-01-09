@@ -1,7 +1,7 @@
-import styles from "./FacebookMockup.module.css";
+import { useState } from "react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
 import MainImageUpload from "./MainImageUpload/MainImageUpload";
-import { useState } from "react";
+import styles from "./FacebookImgSection.module.css";
 
 const FacebookImgSection = () => {
   const [showImageButton, setShowImageButton] = useState(false);
