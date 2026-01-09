@@ -19,14 +19,6 @@
   gap: 3px;
 }
 
-.reactionSelectionWrapper {
-  position: absolute;
-  top: -149%;
-  left: -25%;
-  background-color: transparent;
-  height: 130px;
-}
-
 .emojiContainer {
   position: relative;
   height: 18px;
@@ -49,6 +41,26 @@
   }
 }
 
+.reactionSelectionWrapper {
+  position: absolute;
+  display: flex;
+  place-content: center;
+  top: -175%;
+  left: -25%;
+  background-color: transparent;
+  padding: 20px;
+}
+
+.reactionSelection {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
 .reactionButton {
   width: 60px;
   height: 60px;
@@ -62,16 +74,6 @@
   &:disabled > * {
     opacity: 0.3;
   }
-}
-
-.reactionSelection {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
 .interactionsBottom {
