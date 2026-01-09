@@ -1,6 +1,12 @@
-const EmojiHappy = () => {
+const EmojiHappy = ({ size = 18 }: { size?: number }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 16 16"
+      width={size}
+      height={size}
+    >
       <g clipPath="url(#clip050_15251_63610)">
         <path
           d="M15.9953 7.9996c0 4.418-3.5816 7.9996-7.9996 7.9996S-.004 12.4176-.004 7.9996 3.5776 0 7.9957 0c4.418 0 7.9996 3.5815 7.9996 7.9996Z"
@@ -39,8 +45,8 @@ const EmojiHappy = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)"
         >
-          <stop offset=".5637" stop-color="#FF5758" stop-opacity="0" />
-          <stop offset="1" stop-color="#FF5758" stop-opacity=".1" />
+          <stop offset=".5637" stopColor="#FF5758" stopOpacity="0" />
+          <stop offset="1" stopColor="#FF5758" stopOpacity=".1" />
         </radialGradient>
         <radialGradient
           id="paint250_radial_15251_63610"
@@ -50,8 +56,8 @@ const EmojiHappy = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(45 -4.5272 10.9202) scale(10.1818)"
         >
-          <stop stop-color="#FFF287" />
-          <stop offset="1" stop-color="#FFF287" stop-opacity="0" />
+          <stop stopColor="#FFF287" />
+          <stop offset="1" stopColor="#FFF287" stopOpacity="0" />
         </radialGradient>
         <linearGradient
           id="paint050_linear_15251_63610"
@@ -61,8 +67,8 @@ const EmojiHappy = () => {
           y2="13.5993"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF287" />
-          <stop offset="1" stop-color="#F68628" />
+          <stop stopColor="#FFF287" />
+          <stop offset="1" stopColor="#F68628" />
         </linearGradient>
         <linearGradient
           id="paint350_linear_15251_63610"
@@ -72,9 +78,9 @@ const EmojiHappy = () => {
           y2="14.2452"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF60A4" />
-          <stop offset=".2417" stop-color="#FA2E3E" />
-          <stop offset="1" stop-color="#BC0A26" />
+          <stop stopColor="#FF60A4" />
+          <stop offset=".2417" stopColor="#FA2E3E" />
+          <stop offset="1" stopColor="#BC0A26" />
         </linearGradient>
         <clipPath id="clip050_15251_63610">
           <path fill="#fff" d="M-.002 0h16v15.9992h-16z" />

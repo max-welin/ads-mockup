@@ -7,7 +7,9 @@ function App() {
   return (
     <MockupProvider>
       <Header />
-      <FacebookMockup />
+      <main style={{ padding: "16px", height: "100dvh" }}>
+        <FacebookMockup />
+      </main>
       <Footer />
     </MockupProvider>
   );

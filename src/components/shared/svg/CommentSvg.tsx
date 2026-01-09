@@ -1,18 +1,26 @@
-const CommentSvg = () => {
+interface CommentSvgProps {
+  fill?: string;
+  strokeColor?: string;
+}
+
+const CommentSvg = ({
+  fill = "none",
+  strokeColor = "#65676b",
+}: CommentSvgProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       height="20"
       viewBox="0 0 70 70"
-      fill="none"
+      fill={fill}
     >
       <path
         d="M35 61.25C29.8082 61.25 24.7331 59.7105 20.4163 56.8261C16.0995 53.9417 12.735 49.842 10.7482 45.0455C8.76136 40.2489 8.24152 34.9709 9.25438 29.8789C10.2672 24.7869 12.7673 20.1096 16.4384 16.4385C20.1096 12.7673 24.7869 10.2673 29.8789 9.2544C34.9709 8.24154 40.2489 8.76137 45.0454 10.7482C49.842 12.735 53.9417 16.0995 56.8261 20.4163C59.7105 24.7331 61.25 29.8083 61.25 35C61.25 39.34 60.2 43.4292 58.3333 47.0371L61.25 61.25L47.0371 58.3333C43.4321 60.1971 39.3371 61.25 35 61.25Z"
-        stroke="#65676B"
-        stroke-width="4.375"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke={strokeColor}
+        strokeWidth="4.375"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

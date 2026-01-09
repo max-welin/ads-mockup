@@ -10,6 +10,11 @@
   border: 1px dotted var(--main-gray);
 }
 
+.mockup:hover .addReaction {
+  border: 1px dotted var(--main-gray);
+  color: var(--main-gray);
+}
+
 .editable {
   background: transparent;
   border: 1px dotted transparent;
@@ -28,4 +33,14 @@
   outline: none;
   font: inherit;
   color: inherit;
+}
+
+.addReaction {
+  line-height: 1;
+  background: transparent;
+  border: 1px dotted transparent;
+  padding: 0;
+  background: transparent;
+  outline: none;
+  color: transparent;
 }

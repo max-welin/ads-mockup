@@ -1,6 +1,12 @@
-const EmojiLove = () => {
+const EmojiLove = ({ size = 18 }: { size?: number }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 16 16"
+      width={size}
+      height={size}
+    >
       <g clipPath="url(#clip070_15251_63610)">
         <path
           d="M15.9982 7.9998c0 4.4181-3.5815 7.9996-7.9996 7.9996-4.418 0-7.9996-3.5815-7.9996-7.9996 0-4.418 3.5816-7.9996 7.9996-7.9996 4.4181 0 7.9996 3.5816 7.9996 7.9996Z"
@@ -157,8 +163,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)"
         >
-          <stop offset=".5637" stop-color="#FF5758" stop-opacity="0" />
-          <stop offset="1" stop-color="#FF5758" stop-opacity=".1" />
+          <stop offset=".5637" stopColor="#FF5758" stopOpacity="0" />
+          <stop offset="1" stopColor="#FF5758" stopOpacity=".1" />
         </radialGradient>
         <radialGradient
           id="paint370_radial_15251_63610"
@@ -168,8 +174,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(.1233 -1.60292 4.45604 .34277 10.6837 13.9363)"
         >
-          <stop stop-color="#791119" stop-opacity=".7" />
-          <stop offset="1" stop-color="#791119" stop-opacity="0" />
+          <stop stopColor="#791119" stopOpacity=".7" />
+          <stop offset="1" stopColor="#791119" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint470_radial_15251_63610"
@@ -179,8 +185,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(.92919 2.03556 -13.3287 6.08424 12.9748 11.0609)"
         >
-          <stop stop-color="#791119" stop-opacity=".08" />
-          <stop offset="1" stop-color="#791119" stop-opacity="0" />
+          <stop stopColor="#791119" stopOpacity=".08" />
+          <stop offset="1" stopColor="#791119" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint570_radial_15251_63610"
@@ -190,8 +196,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(.5 -2 2.8733 .71832 3 11)"
         >
-          <stop offset=".2088" stop-color="#791119" stop-opacity=".4" />
-          <stop offset="1" stop-color="#791119" stop-opacity="0" />
+          <stop offset=".2088" stopColor="#791119" stopOpacity=".4" />
+          <stop offset="1" stopColor="#791119" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint670_radial_15251_63610"
@@ -201,8 +207,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(1.5 -1 1.43665 2.15497 2 10)"
         >
-          <stop offset=".2088" stop-color="#791119" stop-opacity=".3" />
-          <stop offset="1" stop-color="#791119" stop-opacity="0" />
+          <stop offset=".2088" stopColor="#791119" stopOpacity=".3" />
+          <stop offset="1" stopColor="#791119" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint770_radial_15251_63610"
@@ -212,8 +218,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(4.40005 5.20005 -6.1455 5.20005 4.198 9.4003)"
         >
-          <stop offset=".3729" stop-color="#FA2E3E" />
-          <stop offset=".9266" stop-color="#E11731" />
+          <stop offset=".3729" stopColor="#FA2E3E" />
+          <stop offset=".9266" stopColor="#E11731" />
         </radialGradient>
         <radialGradient
           id="paint870_radial_15251_63610"
@@ -223,8 +229,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(-92.693 7.5086 3.7543) scale(1.72921 2.52467)"
         >
-          <stop stop-color="#791119" stop-opacity=".9" />
-          <stop offset="1" stop-color="#791119" stop-opacity="0" />
+          <stop stopColor="#791119" stopOpacity=".9" />
+          <stop offset="1" stopColor="#791119" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint970_radial_15251_63610"
@@ -234,8 +240,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(-65.627 15.8732 -.8589) scale(1.94093 2.8338)"
         >
-          <stop stop-color="#791119" stop-opacity=".9" />
-          <stop offset="1" stop-color="#791119" stop-opacity="0" />
+          <stop stopColor="#791119" stopOpacity=".9" />
+          <stop offset="1" stopColor="#791119" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint1170_radial_15251_63610"
@@ -245,8 +251,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(93.472 -1.1146 5.8598) scale(4.00047 8.84233)"
         >
-          <stop stop-color="#FFF287" stop-opacity="0" />
-          <stop offset=".9846" stop-color="#FF5758" stop-opacity=".8" />
+          <stop stopColor="#FFF287" stopOpacity="0" />
+          <stop offset=".9846" stopColor="#FF5758" stopOpacity=".8" />
         </radialGradient>
         <radialGradient
           id="paint1270_radial_15251_63610"
@@ -256,8 +262,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(131.396 1.7386 3.9605) scale(7.98139 8.42047)"
         >
-          <stop offset=".6481" stop-color="#FFE480" />
-          <stop offset=".9167" stop-color="#FFE480" stop-opacity="0" />
+          <stop offset=".6481" stopColor="#FFE480" />
+          <stop offset=".9167" stopColor="#FFE480" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint1370_radial_15251_63610"
@@ -267,8 +273,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(115.036 -.1572 5.1636) scale(5.20766 4.5125)"
         >
-          <stop offset=".9124" stop-color="#FFE480" stop-opacity="0" />
-          <stop offset="1" stop-color="#FFE480" />
+          <stop offset=".9124" stopColor="#FFE480" stopOpacity="0" />
+          <stop offset="1" stopColor="#FFE480" />
         </radialGradient>
         <radialGradient
           id="paint1470_radial_15251_63610"
@@ -278,8 +284,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(1.35706 1.5577 -3.27818 2.85593 0 7.5)"
         >
-          <stop stop-color="#FFE483" />
-          <stop offset=".9167" stop-color="#FFEB80" stop-opacity="0" />
+          <stop stopColor="#FFE483" />
+          <stop offset=".9167" stopColor="#FFEB80" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint1670_radial_15251_63610"
@@ -289,8 +295,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(38.267 -7.741 22.3658) scale(3.94718 18.9414)"
         >
-          <stop stop-color="#FFF287" stop-opacity="0" />
-          <stop offset=".7371" stop-color="#FF5758" stop-opacity=".4" />
+          <stop stopColor="#FFF287" stopOpacity="0" />
+          <stop offset=".7371" stopColor="#FF5758" stopOpacity=".4" />
         </radialGradient>
         <radialGradient
           id="paint1770_radial_15251_63610"
@@ -300,8 +306,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(2.93607 2.57398 -2.89968 3.3076 10.5 8)"
         >
-          <stop offset=".8254" stop-color="#FFE480" />
-          <stop offset="1" stop-color="#FFE480" stop-opacity="0" />
+          <stop offset=".8254" stopColor="#FFE480" />
+          <stop offset="1" stopColor="#FFE480" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint1870_radial_15251_63610"
@@ -311,8 +317,8 @@ const EmojiLove = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(4.5 2.5 -3.1886 5.73949 11 9)"
         >
-          <stop offset=".897" stop-color="#FFE480" stop-opacity="0" />
-          <stop offset="1" stop-color="#FFE480" />
+          <stop offset=".897" stopColor="#FFE480" stopOpacity="0" />
+          <stop offset="1" stopColor="#FFE480" />
         </radialGradient>
         <linearGradient
           id="paint070_linear_15251_63610"
@@ -322,8 +328,8 @@ const EmojiLove = () => {
           y2="16.0002"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".2619" stop-color="#FFF287" />
-          <stop offset="1" stop-color="#F68628" />
+          <stop offset=".2619" stopColor="#FFF287" />
+          <stop offset="1" stopColor="#F68628" />
         </linearGradient>
         <linearGradient
           id="paint270_linear_15251_63610"
@@ -333,8 +339,8 @@ const EmojiLove = () => {
           y2="17.0002"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF287" stop-opacity="0" />
-          <stop offset="1" stop-color="#FFF287" />
+          <stop stopColor="#FFF287" stopOpacity="0" />
+          <stop offset="1" stopColor="#FFF287" />
         </linearGradient>
         <linearGradient
           id="paint1070_linear_15251_63610"
@@ -344,8 +350,8 @@ const EmojiLove = () => {
           y2="9.9854"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF287" />
-          <stop offset="1" stop-color="#F68628" stop-opacity=".3" />
+          <stop stopColor="#FFF287" />
+          <stop offset="1" stopColor="#F68628" stopOpacity=".3" />
         </linearGradient>
         <linearGradient
           id="paint1570_linear_15251_63610"
@@ -355,8 +361,8 @@ const EmojiLove = () => {
           y2="13.8876"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".0835" stop-color="#FFF287" />
-          <stop offset="1" stop-color="#F68628" />
+          <stop offset=".0835" stopColor="#FFF287" />
+          <stop offset="1" stopColor="#F68628" />
         </linearGradient>
         <clipPath id="clip070_15251_63610">
           <path fill="#fff" d="M-.002.0002h16.0001v16h-16z" />

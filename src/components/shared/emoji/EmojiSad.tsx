@@ -1,6 +1,12 @@
-const EmojiSad = () => {
+const EmojiSad = ({ size = 18 }: { size?: number }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 16 16"
+      width={size}
+      height={size}
+    >
       <g clipPath="url(#clip040_15251_63610)">
         <path
           d="M15.9943 8.0004c0 4.4181-3.5815 7.9996-7.9996 7.9996-4.418 0-7.9996-3.5815-7.9996-7.9996 0-4.418 3.5816-7.9995 7.9996-7.9995 4.4181 0 7.9996 3.5815 7.9996 7.9995Z"
@@ -48,8 +54,8 @@ const EmojiSad = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)"
         >
-          <stop offset=".5637" stop-color="#FF5758" stop-opacity="0" />
-          <stop offset="1" stop-color="#FF5758" stop-opacity=".1" />
+          <stop offset=".5637" stopColor="#FF5758" stopOpacity="0" />
+          <stop offset="1" stopColor="#FF5758" stopOpacity=".1" />
         </radialGradient>
         <radialGradient
           id="paint240_radial_15251_63610"
@@ -59,8 +65,8 @@ const EmojiSad = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(45 -4.5287 10.9195) scale(10.1818)"
         >
-          <stop stop-color="#FFF287" />
-          <stop offset="1" stop-color="#FFF287" stop-opacity="0" />
+          <stop stopColor="#FFF287" />
+          <stop offset="1" stopColor="#FFF287" stopOpacity="0" />
         </radialGradient>
         <linearGradient
           id="paint040_linear_15251_63610"
@@ -70,8 +76,8 @@ const EmojiSad = () => {
           y2="13.6001"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF287" />
-          <stop offset="1" stop-color="#F68628" />
+          <stop stopColor="#FFF287" />
+          <stop offset="1" stopColor="#F68628" />
         </linearGradient>
         <clipPath id="clip040_15251_63610">
           <path fill="#fff" d="M-.003.0009h15.9993v15.9984H-.003z" />
@@ -83,9 +89,9 @@ const EmojiSad = () => {
           width="3.6006"
           height="4.7998"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"

@@ -1,6 +1,12 @@
-const EmojiLike = () => {
+const EmojiLike = ({ size = 18 }: { size?: number }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 16 16"
+      width={size}
+      height={size}
+    >
       <path
         d="M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z"
         fill="url(#paint00_linear_15251_63610)"
@@ -27,8 +33,8 @@ const EmojiLike = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(90 .0005 8) scale(7.99958)"
         >
-          <stop offset=".5618" stop-color="#0866FF" stop-opacity="0" />
-          <stop offset="1" stop-color="#0866FF" stop-opacity=".1" />
+          <stop offset=".5618" stopColor="#0866FF" stopOpacity="0" />
+          <stop offset="1" stopColor="#0866FF" stopOpacity=".1" />
         </radialGradient>
         <radialGradient
           id="paint20_radial_15251_63610"
@@ -38,8 +44,8 @@ const EmojiLike = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(45 -4.5257 10.9237) scale(10.1818)"
         >
-          <stop offset=".3143" stop-color="#02ADFC" />
-          <stop offset="1" stop-color="#02ADFC" stop-opacity="0" />
+          <stop offset=".3143" stopColor="#02ADFC" />
+          <stop offset="1" stopColor="#02ADFC" stopOpacity="0" />
         </radialGradient>
         <linearGradient
           id="paint00_linear_15251_63610"
@@ -49,9 +55,9 @@ const EmojiLike = () => {
           y2="13.5993"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#02ADFC" />
-          <stop offset=".5" stop-color="#0866FF" />
-          <stop offset="1" stop-color="#2B7EFF" />
+          <stop stopColor="#02ADFC" />
+          <stop offset=".5" stopColor="#0866FF" />
+          <stop offset="1" stopColor="#2B7EFF" />
         </linearGradient>
       </defs>
     </svg>

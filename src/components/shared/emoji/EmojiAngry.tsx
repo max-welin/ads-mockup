@@ -1,6 +1,12 @@
-const EmojiAngry = () => {
+const EmojiAngry = ({ size = 18 }: { size?: number }) => {
   return (
-    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <svg
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      width={size}
+      height={size}
+    >
       <g clipPath="url(#clip030_15251_63610)">
         <path
           d="M15.9972 7.9996c0 4.418-3.5815 7.9996-7.9996 7.9996-4.418 0-7.9996-3.5816-7.9996-7.9996S3.5796 0 7.9976 0c4.4181 0 7.9996 3.5815 7.9996 7.9996Z"
@@ -41,8 +47,8 @@ const EmojiAngry = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)"
         >
-          <stop offset=".8134" stop-color="#FA2E3E" stop-opacity="0" />
-          <stop offset="1" stop-color="#FA2E3E" stop-opacity=".1" />
+          <stop offset=".8134" stopColor="#FA2E3E" stopOpacity="0" />
+          <stop offset="1" stopColor="#FA2E3E" stopOpacity=".1" />
         </radialGradient>
         <radialGradient
           id="paint230_radial_15251_63610"
@@ -52,8 +58,8 @@ const EmojiAngry = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(45 -4.5272 10.9202) scale(10.1818)"
         >
-          <stop stop-color="#FFB169" />
-          <stop offset="1" stop-color="#FFB169" stop-opacity="0" />
+          <stop stopColor="#FFB169" />
+          <stop offset="1" stopColor="#FFB169" stopOpacity="0" />
         </radialGradient>
         <linearGradient
           id="paint030_linear_15251_63610"
@@ -63,8 +69,8 @@ const EmojiAngry = () => {
           y2="13.5993"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFB169" />
-          <stop offset="1" stop-color="#FF5758" />
+          <stop stopColor="#FFB169" />
+          <stop offset="1" stopColor="#FF5758" />
         </linearGradient>
         <clipPath id="clip030_15251_63610">
           <path fill="#fff" d="M-.004 0h15.9993v15.9992H-.004z" />

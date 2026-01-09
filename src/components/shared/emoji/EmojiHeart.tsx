@@ -1,6 +1,12 @@
-const EmojiHeart = () => {
+const EmojiHeart = ({ size = 18 }: { size?: number }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 16 16"
+      width={size}
+      height={size}
+    >
       <g clipPath="url(#clip020_15251_63610)">
         <path
           d="M15.9963 8c0 4.4179-3.5811 7.9993-7.9986 7.9993-4.4176 0-7.9987-3.5814-7.9987-7.9992 0-4.4179 3.5811-7.9992 7.9987-7.9992 4.4175 0 7.9986 3.5813 7.9986 7.9992Z"
@@ -24,8 +30,8 @@ const EmojiHeart = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)"
         >
-          <stop offset=".5637" stop-color="#E11731" stop-opacity="0" />
-          <stop offset="1" stop-color="#E11731" stop-opacity=".1" />
+          <stop offset=".5637" stopColor="#E11731" stopOpacity="0" />
+          <stop offset="1" stopColor="#E11731" stopOpacity=".1" />
         </radialGradient>
         <linearGradient
           id="paint020_linear_15251_63610"
@@ -35,9 +41,9 @@ const EmojiHeart = () => {
           y2="13.5993"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF74AE" />
-          <stop offset=".5001" stop-color="#FA2E3E" />
-          <stop offset="1" stop-color="#FF5758" />
+          <stop stopColor="#FF74AE" />
+          <stop offset=".5001" stopColor="#FA2E3E" />
+          <stop offset="1" stopColor="#FF5758" />
         </linearGradient>
         <clipPath id="clip020_15251_63610">
           <path fill="#fff" d="M-.001.0009h15.9992v15.9984H-.001z" />

@@ -1,6 +1,12 @@
-const EmojiSurprised = () => {
+const EmojiSurprised = ({ size = 18 }: { size?: number }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 16 16"
+      width={size}
+      height={size}
+    >
       <g clipPath="url(#clip060_15251_63610)">
         <path
           d="M15.9972 7.9996c0 4.418-3.5815 7.9996-7.9996 7.9996-4.418 0-7.9996-3.5816-7.9996-7.9996S3.5796 0 7.9976 0c4.4181 0 7.9996 3.5815 7.9996 7.9996Z"
@@ -51,8 +57,8 @@ const EmojiSurprised = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0 7.9992 -7.99863 0 7.9986 7.9992)"
         >
-          <stop offset=".5637" stop-color="#FF5758" stop-opacity="0" />
-          <stop offset="1" stop-color="#FF5758" stop-opacity=".1" />
+          <stop offset=".5637" stopColor="#FF5758" stopOpacity="0" />
+          <stop offset="1" stopColor="#FF5758" stopOpacity=".1" />
         </radialGradient>
         <radialGradient
           id="paint260_radial_15251_63610"
@@ -62,8 +68,8 @@ const EmojiSurprised = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="rotate(45 -4.5262 10.9226) scale(10.1818)"
         >
-          <stop stop-color="#FFF287" />
-          <stop offset="1" stop-color="#FFF287" stop-opacity="0" />
+          <stop stopColor="#FFF287" />
+          <stop offset="1" stopColor="#FFF287" stopOpacity="0" />
         </radialGradient>
         <linearGradient
           id="paint060_linear_15251_63610"
@@ -73,8 +79,8 @@ const EmojiSurprised = () => {
           y2="13.5993"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF287" />
-          <stop offset="1" stop-color="#F68628" />
+          <stop stopColor="#FFF287" />
+          <stop offset="1" stopColor="#F68628" />
         </linearGradient>
         <clipPath id="clip060_15251_63610">
           <path fill="#fff" d="M-.002 0h15.9992v15.9992H-.002z" />

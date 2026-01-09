@@ -1,4 +1,5 @@
 .interactionsContainer {
+  position: relative;
   margin: 10px 12px;
   display: flex;
   flex-direction: column;
@@ -10,7 +11,67 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
+  font-size: 15px;
+}
+
+.reactionsContainer {
+  display: flex;
+  gap: 3px;
+}
+
+.reactionSelectionWrapper {
+  position: absolute;
+  top: -149%;
+  left: -25%;
+  background-color: transparent;
+  height: 130px;
+}
+
+.emojiContainer {
+  position: relative;
+  height: 18px;
+
+  > * {
+    outline: 2px solid white;
+    border-radius: 50%;
+  }
+
+  & :nth-child(1) {
+    z-index: 30;
+  }
+
+  & :nth-child(2) {
+    z-index: 20;
+  }
+
+  & :nth-child(3) {
+    z-index: 10;
+  }
+}
+
+.reactionButton {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+
+  > * {
+    transform: scale(2);
+  }
+  &:disabled > * {
+    opacity: 0.3;
+  }
+}
+
+.reactionSelection {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.05);
 }
 
 .interactionsBottom {
@@ -24,7 +85,7 @@
     display: flex;
     gap: 5px;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 15px;
     align-items: center;
   }
 }
@@ -32,4 +93,10 @@
 .commentsContainer {
   display: flex;
   gap: 8px;
+
+  & > p {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
 }
