@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 
 import { useCallback, useRef } from "react";
 import { toPng } from "html-to-image";
+import SettingsMenu from "./components/Settings/Settings";
 
 function App() {
   const mainRef = useRef<HTMLElement>(null);
@@ -36,6 +37,7 @@ function App() {
       >
         <FacebookMockup />
       </main>
+      <SettingsMenu />
       <button onClick={handleClick}>download to png test</button>
       <Footer />
     </MockupProvider>
