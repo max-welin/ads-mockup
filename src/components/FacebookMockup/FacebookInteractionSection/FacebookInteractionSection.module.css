@@ -27,18 +27,6 @@
     outline: 2px solid white;
     border-radius: 50%;
   }
-
-  & :nth-child(1) {
-    z-index: 30;
-  }
-
-  & :nth-child(2) {
-    z-index: 20;
-  }
-
-  & :nth-child(3) {
-    z-index: 10;
-  }
 }
 
 .reactionSelectionWrapper {

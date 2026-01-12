@@ -1,7 +1,8 @@
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import sectionStyles from "./FacebookCtaSection.module.css";
+import facebookMockupStyles from "./FacebookCtaSection.module.css";
 import styles from "../FacebookMockup.module.css";
 import EditableSpan from "../../shared/svg/EditableSpan";
+import FacebookCtaButton from "./FacebookCtaButton";
 
 const FacebookCtaSection = () => {
   const {
@@ -16,15 +17,15 @@ const FacebookCtaSection = () => {
   } = useMockupContext();
 
   return (
-    <div className={sectionStyles.ctaContainer}>
-      <div className={sectionStyles.titleContainer}>
+    <div className={facebookMockupStyles.ctaContainer}>
+      <div className={facebookMockupStyles.titleContainer}>
         <EditableSpan
-          className={`${sectionStyles.url} ${styles.editable}`}
+          className={`${facebookMockupStyles.url} ${styles.editable}`}
           text={url}
           onBlurFn={setUrl}
         />
         <EditableSpan
-          className={`${sectionStyles.title} ${styles.editable}`}
+          className={`${facebookMockupStyles.title} ${styles.editable}`}
           text={ctaTitle}
           onBlurFn={setCtaTitle}
         />
@@ -35,13 +36,7 @@ const FacebookCtaSection = () => {
         />
       </div>
 
-      <div className={sectionStyles.ctaButton}>
-        <EditableSpan
-          className={styles.editable}
-          text={ctaButtonText}
-          onBlurFn={setCtaButtonText}
-        />
-      </div>
+      <FacebookCtaButton />
     </div>
   );
 };

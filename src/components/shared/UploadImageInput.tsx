@@ -5,10 +5,9 @@ import styles from "./UploadImageInpus.module.css";
 interface UploadImageInpusProps {
   size: number;
   onChangeFn: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  css?: string;
 }
 
-const UploadImageInput = ({ size, onChangeFn, css }: UploadImageInpusProps) => {
+const UploadImageInput = ({ size, onChangeFn }: UploadImageInpusProps) => {
   const { showImageButton } = useMockupContext();
 
   return (
@@ -17,9 +16,7 @@ const UploadImageInput = ({ size, onChangeFn, css }: UploadImageInpusProps) => {
         height: `${size}px`,
         width: `${size}px`,
       }}
-      className={`${styles.circleButton} ${css} ${
-        showImageButton ? styles.show : ""
-      }`}
+      className={`${styles.circleButton} ${showImageButton ? styles.show : ""}`}
     >
       <input
         type="file"

@@ -13,11 +13,7 @@ const FacebookImgSection = () => {
   return (
     <div className={styles.imgContainer}>
       <img src={mainImg} alt="Default image" />
-      <UploadImageInput
-        size={60}
-        onChangeFn={onMainImageChange}
-        css={styles.fileUploadBtn}
-      />
+      <UploadImageInput size={60} onChangeFn={onMainImageChange} />
     </div>
   );
 };

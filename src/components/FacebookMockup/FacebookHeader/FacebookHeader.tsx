@@ -19,11 +19,7 @@ const FacebookHeaderSection = () => {
     <div className={styles.mockupHeader}>
       <div className={styles.imgContainer}>
         <img src={headerImg} alt={`${headerTitle} logo`} />
-        <UploadImageInput
-          size={36}
-          onChangeFn={onHeaderImageChange}
-          css={styles.fileInputBtn}
-        />
+        <UploadImageInput size={36} onChangeFn={onHeaderImageChange} />
       </div>
 
       <div className={styles.headerTitleContainer}>
