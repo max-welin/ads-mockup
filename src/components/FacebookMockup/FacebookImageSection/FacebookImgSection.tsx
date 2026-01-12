@@ -1,20 +1,23 @@
-import { useState } from "react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
 import styles from "./FacebookImgSection.module.css";
-import MainImageInput from "./MainImageUpload/MainImageInput";
+import UploadImageInput from "../../shared/UploadImageInput";
+import { onImageChange } from "../../../utils/onImageChange";
 
 const FacebookImgSection = () => {
-  const [showImageButton, setShowImageButton] = useState(false);
-  const { mainImg } = useMockupContext();
+  const { mainImg, setMainImg } = useMockupContext();
+
+  const onMainImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onImageChange(e, setMainImg);
+  };
 
   return (
-    <div
-      className={styles.imgContainer}
-      onMouseEnter={() => setShowImageButton(true)}
-      onMouseLeave={() => setShowImageButton(false)}
-    >
+    <div className={styles.imgContainer}>
       <img src={mainImg} alt="Default image" />
-      <MainImageInput showButton={showImageButton} />
+      <UploadImageInput
+        size={60}
+        onChangeFn={onMainImageChange}
+        css={styles.fileUploadBtn}
+      />
     </div>
   );
 };

@@ -15,6 +15,7 @@ interface MockupContextValue {
   ctaTitle: string;
   url: string;
   ctaSectionDescription: string;
+  showImageButton: boolean;
   setHeaderTitle: Dispatch<SetStateAction<string>>;
   setHeaderImg: Dispatch<SetStateAction<string>>;
   setMainImg: Dispatch<SetStateAction<string>>;
@@ -23,6 +24,7 @@ interface MockupContextValue {
   setCtaTitle: Dispatch<SetStateAction<string>>;
   setUrl: Dispatch<SetStateAction<string>>;
   setCtaSectionDescription: Dispatch<SetStateAction<string>>;
+  setShowImageButton: Dispatch<SetStateAction<boolean>>;
 }
 
 interface MockupProviderProps {
@@ -43,6 +45,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
   const [url, setUrl] = useState("www.landrover.com");
   const [ctaSectionDescription, setCtaSectionDescription] =
     useState("Book a test drive");
+  const [showImageButton, setShowImageButton] = useState(false);
 
   const value: MockupContextValue = {
     headerTitle,
@@ -53,6 +56,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     ctaTitle,
     url,
     ctaSectionDescription,
+    showImageButton,
     setHeaderTitle,
     setHeaderImg,
     setMainImg,
@@ -61,6 +65,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     setCtaTitle,
     setUrl,
     setCtaSectionDescription,
+    setShowImageButton,
   };
 
   return (

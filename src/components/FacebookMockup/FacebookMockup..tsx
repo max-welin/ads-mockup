@@ -1,3 +1,4 @@
+import { useMockupContext } from "../../hooks/useMockupContext";
 import FacebookCtaSection from "./FacebookCtaSection/FacebookCtaSection";
 import FacebookHeaderSection from "./FacebookHeader/FacebookHeader";
 import FacebookTextSection from "./FacebookHeader/FacebookTextSection";
@@ -6,8 +7,14 @@ import FacebookInteractionSection from "./FacebookInteractionSection/FacebookInt
 import styles from "./FacebookMockup.module.css";
 
 const FacebookMockup = () => {
+  const { setShowImageButton } = useMockupContext();
+
   return (
-    <main className={styles.mockup}>
+    <main
+      className={styles.mockup}
+      onMouseEnter={() => setShowImageButton(true)}
+      onMouseLeave={() => setShowImageButton(false)}
+    >
       <FacebookHeaderSection />
       <FacebookTextSection />
       <FacebookImgSection />

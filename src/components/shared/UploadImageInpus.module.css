@@ -3,12 +3,10 @@
 }
 
 .circleButton {
-  position: absolute;
+  /* position: absolute; */
   opacity: 0;
-  top: 50%;
-  left: 50%;
-  width: 60px;
-  height: 60px;
+  /* top: 50%;
+  left: 50%; */
   border-radius: 50%;
   display: inline-flex;
   align-items: center;

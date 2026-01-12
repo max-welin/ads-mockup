@@ -4,13 +4,27 @@ import styles from "./FacebookHeader.module.css";
 import facebookMockupStyles from "../FacebookMockup.module.css";
 import GlobeSvg from "../../shared/svg/GlobeSvg";
 import EditableSpan from "../../shared/svg/EditableSpan";
+import UploadImageInput from "../../shared/UploadImageInput";
+import { onImageChange } from "../../../utils/onImageChange";
 
 const FacebookHeaderSection = () => {
-  const { headerImg, headerTitle, setHeaderTitle } = useMockupContext();
+  const { headerImg, setHeaderImg, headerTitle, setHeaderTitle } =
+    useMockupContext();
+
+  const onHeaderImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onImageChange(e, setHeaderImg);
+  };
 
   return (
     <div className={styles.mockupHeader}>
-      <img src={headerImg} alt={`${headerTitle} logo`} />
+      <div className={styles.imgContainer}>
+        <img src={headerImg} alt={`${headerTitle} logo`} />
+        <UploadImageInput
+          size={36}
+          onChangeFn={onHeaderImageChange}
+          css={styles.fileInputBtn}
+        />
+      </div>
 
       <div className={styles.headerTitleContainer}>
         <EditableSpan
