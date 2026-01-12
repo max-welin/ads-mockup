@@ -11,7 +11,7 @@ interface MockupContextValue {
   headerImg: string;
   mainImg: string;
   headerDescription: string;
-  ctaButtonText: string;
+  ctaCopy: string;
   ctaTitle: string;
   url: string;
   ctaSectionDescription: string;
@@ -20,7 +20,7 @@ interface MockupContextValue {
   setHeaderImg: Dispatch<SetStateAction<string>>;
   setMainImg: Dispatch<SetStateAction<string>>;
   setHeaderDescription: Dispatch<SetStateAction<string>>;
-  setCtaButtonText: Dispatch<SetStateAction<string>>;
+  setCtaCopy: Dispatch<SetStateAction<string>>;
   setCtaTitle: Dispatch<SetStateAction<string>>;
   setUrl: Dispatch<SetStateAction<string>>;
   setCtaSectionDescription: Dispatch<SetStateAction<string>>;
@@ -40,7 +40,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
   const [headerDescription, setHeaderDescription] = useState(
     "Discover Land Rover's luxurious SUVs. Ready for adventure."
   );
-  const [ctaButtonText, setCtaButtonText] = useState("Learn more");
+  const [ctaCopy, setCtaCopy] = useState("learn more");
   const [ctaTitle, setCtaTitle] = useState("Land Rover Velar");
   const [url, setUrl] = useState("www.landrover.com");
   const [ctaSectionDescription, setCtaSectionDescription] =
@@ -52,7 +52,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     headerImg,
     mainImg,
     headerDescription,
-    ctaButtonText,
+    ctaCopy,
     ctaTitle,
     url,
     ctaSectionDescription,
@@ -61,7 +61,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     setHeaderImg,
     setMainImg,
     setHeaderDescription,
-    setCtaButtonText,
+    setCtaCopy,
     setCtaTitle,
     setUrl,
     setCtaSectionDescription,

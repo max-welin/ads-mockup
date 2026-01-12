@@ -1,40 +1,61 @@
+import { useState } from "react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import EditableSpan from "../../shared/svg/EditableSpan";
 import facebookMockupStyles from "../FacebookMockup.module.css";
 import styles from "./FacebookCtaSection.module.css";
 
-const CTA_BUTTON_OPTIONS = [
-  "Learn More",
-  "Download",
-  "Apply Now",
-  "Show Now",
-  "Watch More",
-  "Subscribe",
-  "Sign Up",
-  "Book Now",
-  "Call Now",
+const CTA_COPY_OPTIONS = [
+  "learn more",
+  "download",
+  "apply now",
+  "show now",
+  "watch more",
+  "subscribe",
+  "sign up",
+  "book now",
+  "call now",
   "Contact Us",
-  "Listen Now",
-  "Get Showtimes",
-  "Order Now",
-  "Get Directions",
-  "See Menu",
-  "Get Quote",
-  "Send Message",
-  "Request Time",
+  "listen now",
+  "get showtimes",
+  "order now",
+  "get directions",
+  "see menu",
+  "get quote",
+  "send message",
+  "request time",
 ];
 
 const FacebookCtaButton = () => {
-  const { ctaButtonText, setCtaButtonText } = useMockupContext();
+  const [showCopyOptions, setShowCopyOptions] = useState(false);
+
+  const { ctaCopy, setCtaCopy } = useMockupContext();
 
   return (
     <>
-      <div className={styles.ctaButton}>
-        <EditableSpan
-          className={facebookMockupStyles.editable}
-          text={ctaButtonText}
-          onBlurFn={setCtaButtonText}
-        />
+      <div
+        className={styles.ctaButton}
+        onMouseEnter={() => setShowCopyOptions(true)}
+        onMouseLeave={() => setShowCopyOptions(false)}
+      >
+        <p className={facebookMockupStyles.editable}>{ctaCopy}</p>
+        {showCopyOptions && (
+          <div
+            className={styles.copySelectionWrapper}
+            onMouseEnter={() => setShowCopyOptions(true)}
+            onMouseLeave={() => setShowCopyOptions(false)}
+          >
+            <ul>
+              {CTA_COPY_OPTIONS.map((option, i) => (
+                <li
+                  key={i}
+                  onClick={() => setCtaCopy(option)}
+                  className={option === ctaCopy ? `${styles.active}` : ""}
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </>
   );
