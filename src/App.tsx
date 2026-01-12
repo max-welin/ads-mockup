@@ -36,7 +36,7 @@ function App() {
       >
         <FacebookMockup />
       </main>
-      <button onClick={handleClick}>hej</button>
+      <button onClick={handleClick}>download to png test</button>
       <Footer />
     </MockupProvider>
   );
