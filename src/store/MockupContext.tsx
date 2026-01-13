@@ -6,6 +6,7 @@ import {
   type ReactNode,
   type SetStateAction,
 } from "react";
+import type { Device, Format } from "../models/mockup.models";
 
 interface MockupContextValue {
   mainRef: React.RefObject<HTMLElement | null>;
@@ -18,6 +19,8 @@ interface MockupContextValue {
   url: string;
   ctaSectionDescription: string;
   showImageButton: boolean;
+  device: Device;
+  format: Format;
   setHeaderTitle: Dispatch<SetStateAction<string>>;
   setHeaderImg: Dispatch<SetStateAction<string>>;
   setMainImg: Dispatch<SetStateAction<string>>;
@@ -27,6 +30,8 @@ interface MockupContextValue {
   setUrl: Dispatch<SetStateAction<string>>;
   setCtaSectionDescription: Dispatch<SetStateAction<string>>;
   setShowImageButton: Dispatch<SetStateAction<boolean>>;
+  setDevice: Dispatch<SetStateAction<Device>>;
+  setFormat: Dispatch<SetStateAction<Format>>;
 }
 
 interface MockupProviderProps {
@@ -36,19 +41,23 @@ interface MockupProviderProps {
 export const MockupContext = createContext<MockupContextValue | null>(null);
 
 const MockupProvider = ({ children }: MockupProviderProps) => {
-  const [headerImg, setHeaderImg] = useState("/src/assets/land-rover-logo.jpg");
-  const [mainImg, setMainImg] = useState("/src/assets/land_rover.jpg");
-  const [ctaTitle, setCtaTitle] = useState("Land Rover Velar");
-  const [headerTitle, setHeaderTitle] = useState("Land Rover");
-  const [headerDescription, setHeaderDescription] = useState(
+  const [headerImg, setHeaderImg] = useState<string>(
+    "/src/assets/land-rover-logo.jpg"
+  );
+  const [mainImg, setMainImg] = useState<string>("/src/assets/land_rover.jpg");
+  const [ctaTitle, setCtaTitle] = useState<string>("Land Rover Velar");
+  const [headerTitle, setHeaderTitle] = useState<string>("Land Rover");
+  const [headerDescription, setHeaderDescription] = useState<string>(
     "Discover Land Rover's luxurious SUVs. Ready for adventure."
   );
   const [ctaSectionDescription, setCtaSectionDescription] =
-    useState("Book a test drive");
-  const [ctaCopy, setCtaCopy] = useState("learn more");
-  const [url, setUrl] = useState("www.landrover.com");
+    useState<string>("Book a test drive");
+  const [ctaCopy, setCtaCopy] = useState<string>("learn more");
+  const [url, setUrl] = useState<string>("www.landrover.com");
+  const [device, setDevice] = useState<Device>("desktop");
+  const [format, setFormat] = useState<Format>("1:1");
 
-  const [showImageButton, setShowImageButton] = useState(false);
+  const [showImageButton, setShowImageButton] = useState<boolean>(false);
 
   const mainRef = useRef<HTMLElement>(null);
 
@@ -63,6 +72,8 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     url,
     ctaSectionDescription,
     showImageButton,
+    device,
+    format,
     setHeaderTitle,
     setHeaderImg,
     setMainImg,
@@ -72,6 +83,8 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     setUrl,
     setCtaSectionDescription,
     setShowImageButton,
+    setDevice,
+    setFormat,
   };
 
   return (
