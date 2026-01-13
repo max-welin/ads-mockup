@@ -1,130 +1,53 @@
 .settingsContainer {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(300px, -50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
   border-radius: 12px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.buttonContainer {
-  display: flex;
-  flex-direction: column;
-  border-radius: 12px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
 
   > button {
-    all: unset;
-    text-align: center;
-    padding: 16px;
-    color: var(--main-gray);
     position: relative;
-
-    &:hover {
-      background-color: white;
-      &::after {
-        opacity: 1;
-      }
-    }
+    cursor: pointer;
+    padding: 12px 16px;
+    color: var(--main-gray);
+    border: 1px solid transparent;
   }
 }
 
-.buttonContainer > button::after {
-  content: "";
-  position: absolute;
-  box-sizing: border-box;
-  top: -1px;
-  right: -12px;
-  z-index: 1;
-  width: 24px;
-  height: calc(100% + 1px);
-  background-color: white;
-  opacity: 0;
+.format {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  &.active {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.options.active {
+  border-top: 1px solid #ddd;
 }
 
 .whiteSpace {
   position: absolute;
-  box-sizing: border-box;
-  top: -1px;
   right: -12px;
-  z-index: 1;
-  width: 24px;
-  height: calc(100% + 1px);
-  background-color: white;
-}
-
-.buttonContainer :nth-child(1) {
-  border-top-left-radius: 12px;
-  &::after {
-    border-top: 1px solid #ddd;
-  }
-}
-.buttonContainer :nth-child(2) {
-  &::after {
-    top: 0;
-  }
-}
-.buttonContainer :nth-child(4) {
-  border-bottom-left-radius: 12px;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-  &::after {
-    top: -1px;
-    height: calc(100% + 2px);
-    border-bottom: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-  }
-}
-
-.optionsContainer {
-  position: absolute;
   top: 0;
-  right: -101px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-  padding: 16px;
-  width: 100px;
-  height: 100%;
-}
-
-.download {
-  position: absolute;
-  bottom: 1px;
-  right: -101px;
-  border-radius: 12px;
-  box-shadow: -10px 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-  padding: 8px;
-  width: 100px;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  background-color: white;
-
-  &::before {
-    background-color: white;
-    &::after {
-      opacity: 1;
-    }
-  }
-}
-
-.download::before {
-  content: "";
-  position: absolute;
-  box-sizing: border-box;
-  top: -1px;
-  left: -15px;
-  z-index: 1;
   width: 24px;
-  height: calc(100% + 1px);
+  height: 100%;
   background-color: white;
-  opacity: 1;
+  z-index: 2;
+}
+
+.formatWhiteSpace {
+  top: -2px;
+  height: calc(100% + 2px);
+  border-top: 1px solid #ddd;
+}
+
+.deviceWhiteSpace {
+  height: calc(100% + 1px);
 }
 
 .divider {
@@ -136,4 +59,8 @@
   );
   height: 2px;
   width: 100%;
+}
+
+.active {
+  background-color: white;
 }
