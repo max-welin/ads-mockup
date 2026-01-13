@@ -7,11 +7,13 @@ import FacebookInteractionSection from "./FacebookInteractionSection/FacebookInt
 import styles from "./FacebookMockup.module.css";
 
 const FacebookMockup = () => {
-  const { setShowImageButton } = useMockupContext();
+  const { setShowImageButton, device } = useMockupContext();
 
   return (
     <main
-      className={styles.mockup}
+      className={`${styles.mockup} ${
+        device === "mobile" ? styles.mobile : styles.desktop
+      }`}
       onMouseEnter={() => setShowImageButton(true)}
       onMouseLeave={() => setShowImageButton(false)}
     >
