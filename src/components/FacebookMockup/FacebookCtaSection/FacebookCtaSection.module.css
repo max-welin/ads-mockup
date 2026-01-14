@@ -41,14 +41,11 @@
 }
 
 .copySelectionWrapper {
-  position: absolute;
-  top: -612px;
-  right: -200px;
+  /* position: absolute; */
   background-color: transparent;
   display: flex;
   justify-content: flex-end;
-  width: 320px;
-  padding: 40px;
+  padding: 10px 10px 10px 100px;
   z-index: 1;
 
   & > ul {
@@ -76,4 +73,8 @@
 .active {
   background-color: var(--main-gray) !important;
   color: white;
+}
+
+.carousel {
+  font-size: 13px;
 }
