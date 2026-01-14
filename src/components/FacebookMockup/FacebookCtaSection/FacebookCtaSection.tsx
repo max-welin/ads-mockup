@@ -12,6 +12,7 @@ const FacebookCtaSection = () => {
     setCtaTitle,
     ctaSectionDescription,
     setCtaSectionDescription,
+    format,
   } = useMockupContext();
 
   return (

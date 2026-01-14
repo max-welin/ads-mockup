@@ -6,13 +6,14 @@ import {
   type ReactNode,
   type SetStateAction,
 } from "react";
-import type { Device, Format } from "../models/mockup.models";
+import type { CarouselCardData, Device, Format } from "../models/mockup.models";
 
 interface MockupContextValue {
   mainRef: React.RefObject<HTMLElement | null>;
   headerTitle: string;
   headerImg: string;
   mainImg: string;
+  carouselCardData: CarouselCardData[];
   headerDescription: string;
   ctaCopy: string;
   ctaTitle: string;
@@ -24,6 +25,7 @@ interface MockupContextValue {
   setHeaderTitle: Dispatch<SetStateAction<string>>;
   setHeaderImg: Dispatch<SetStateAction<string>>;
   setMainImg: Dispatch<SetStateAction<string>>;
+  setCarouselCardData: Dispatch<SetStateAction<CarouselCardData[]>>;
   setHeaderDescription: Dispatch<SetStateAction<string>>;
   setCtaCopy: Dispatch<SetStateAction<string>>;
   setCtaTitle: Dispatch<SetStateAction<string>>;
@@ -55,7 +57,27 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
   const [ctaCopy, setCtaCopy] = useState<string>("learn more");
   const [url, setUrl] = useState<string>("www.landrover.com");
   const [device, setDevice] = useState<Device>("desktop");
-  const [format, setFormat] = useState<Format>("1:1");
+  const [format, setFormat] = useState<Format>("carousel");
+  const [carouselCardData, setCarouselCardData] = useState<CarouselCardData[]>([
+    {
+      title: headerTitle,
+      img: mainImg,
+      description: ctaSectionDescription,
+      ctaCopy: ctaCopy,
+    },
+    {
+      title: headerTitle,
+      img: mainImg,
+      description: ctaSectionDescription,
+      ctaCopy: ctaCopy,
+    },
+    {
+      title: headerTitle,
+      img: mainImg,
+      description: ctaSectionDescription,
+      ctaCopy: ctaCopy,
+    },
+  ]);
 
   const [showImageButton, setShowImageButton] = useState<boolean>(false);
 
@@ -66,6 +88,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     headerTitle,
     headerImg,
     mainImg,
+    carouselCardData,
     headerDescription,
     ctaCopy,
     ctaTitle,
@@ -77,6 +100,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     setHeaderTitle,
     setHeaderImg,
     setMainImg,
+    setCarouselCardData,
     setHeaderDescription,
     setCtaCopy,
     setCtaTitle,

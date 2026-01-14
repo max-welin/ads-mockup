@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-export type Format = "1:1" | "carousel" | "reel";
+export type Format = "native" | "carousel" | "reel";
 
 export type Device = "desktop" | "mobile";
 
@@ -13,3 +13,10 @@ export type DeviceMenuButton = {
   text: Device;
   svg: JSX.Element;
 };
+
+export interface CarouselCardData {
+  img: string;
+  title: string;
+  description: string;
+  ctaCopy: string;
+}

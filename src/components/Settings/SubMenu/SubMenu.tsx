@@ -15,7 +15,7 @@ import FormatCarouselSvg from "../../shared/svg/FormatCarouselSvg";
 import FormatReelSvg from "../../shared/svg/FormatReelSvg";
 
 const FORMAT_MENU_BUTTONS: FormatMenuButton[] = [
-  { text: "1:1", svg: <FormatNativeSvg /> },
+  { text: "native", svg: <FormatNativeSvg /> },
   { text: "carousel", svg: <FormatCarouselSvg /> },
   { text: "reel", svg: <FormatReelSvg /> },
 ];
