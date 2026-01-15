@@ -2,49 +2,22 @@ import Slider from "react-slick";
 import styles from "./Carousel.module.css";
 import "slick-carousel/slick/slick.css";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
 import type { CarouselCardData } from "../../../models/mockup.models";
 import CarouselCard from "./CarouselCard";
 
-import type { CustomArrowProps } from "react-slick";
-
-function NextArrow(props: CustomArrowProps) {
-  const { className, style, onClick } = props;
-
-  return (
-    <button
-      type="button"
-      className={className}
-      style={style}
-      onClick={onClick}
-      aria-label="Next slide"
-    >
-      <ChevronRight size={25} />
-    </button>
-  );
-}
-
-function PrevArrow(props: CustomArrowProps) {
-  const { className, style, onClick } = props;
-
-  return (
-    <button
-      type="button"
-      className={className}
-      style={style}
-      onClick={onClick}
-      aria-label="Previous slide"
-    >
-      <ChevronLeft size={25} />
-    </button>
-  );
-}
+import { useRef, useState } from "react";
+import CarouselAddCardButton from "./CarouselAddCardButton";
+import { NextArrow, PrevArrow } from "./CarouselButtons";
 
 const Carousel = () => {
   const { carouselCardData, device } = useMockupContext();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextButton = useRef<HTMLButtonElement | null>(null);
 
   const slidesToShow = device === "desktop" ? 1.75 : 1.22;
+  const isRightMost = currentIndex === carouselCardData.length - slidesToShow;
 
   const settings = {
     dots: false,
@@ -52,8 +25,9 @@ const Carousel = () => {
     speed: 300,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
+    nextArrow: <NextArrow ref={nextButton} />,
     prevArrow: <PrevArrow />,
+    afterChange: (index: number) => setCurrentIndex(index),
   };
 
   return (
@@ -64,6 +38,7 @@ const Carousel = () => {
             <CarouselCard i={i} carouselCard={carouselCard} />
           ))}
         </Slider>
+        {isRightMost && <CarouselAddCardButton nextButton={nextButton} />}
       </div>
     </>
   );

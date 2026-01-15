@@ -48,6 +48,7 @@
   background-color: white;
   border: 1px solid var(--border);
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2 ease;
 
   > * {
     margin-top: 3px;
@@ -59,11 +60,33 @@
   left: 0;
 }
 
+.slider > :global(.slick-prev.slick-disabled) {
+  opacity: 0;
+}
+
 .slider > :global(.slick-next) {
   right: 0;
 }
 
-.slider > :global(.slick-disabled) {
-  opacity: 0;
+slider > :global(.slick-disabled) {
   pointer-events: none;
+}
+
+.addCardBtn {
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  transform: translateY(-50%);
+  z-index: 10;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+
+  > * {
+    color: var(--main-gray);
+  }
 }
