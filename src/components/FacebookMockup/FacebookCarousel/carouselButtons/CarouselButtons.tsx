@@ -8,7 +8,7 @@ const NextArrow = forwardRef<HTMLButtonElement, CustomArrowProps>(
 
     return (
       <button
-        ref={ref} // Forward ref here
+        ref={ref}
         type="button"
         className={className}
         style={style}
@@ -21,20 +21,23 @@ const NextArrow = forwardRef<HTMLButtonElement, CustomArrowProps>(
   }
 );
 
-const PrevArrow = (props: CustomArrowProps) => {
-  const { className, style, onClick } = props;
+const PrevArrow = forwardRef<HTMLButtonElement, CustomArrowProps>(
+  (props, ref) => {
+    const { className, style, onClick } = props;
 
-  return (
-    <button
-      type="button"
-      className={className}
-      style={style}
-      onClick={onClick}
-      aria-label="Previous slide"
-    >
-      <ChevronLeft size={25} />
-    </button>
-  );
-};
+    return (
+      <button
+        ref={ref}
+        type="button"
+        className={className}
+        style={style}
+        onClick={onClick}
+        aria-label="Previous slide"
+      >
+        <ChevronLeft size={25} />
+      </button>
+    );
+  }
+);
 
 export { NextArrow, PrevArrow };

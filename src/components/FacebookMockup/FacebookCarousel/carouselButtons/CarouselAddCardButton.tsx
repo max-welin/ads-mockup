@@ -1,7 +1,7 @@
-import styles from "./Carousel.module.css";
+import { useMockupContext } from "../../../../hooks/useMockupContext";
+import type { CarouselCardData } from "../../../../models/mockup.models";
+import styles from "../Carousel.module.css";
 import { Plus } from "lucide-react";
-import { useMockupContext } from "../../../hooks/useMockupContext";
-import type { CarouselCardData } from "../../../models/mockup.models";
 
 interface Props {
   nextButton: React.RefObject<HTMLButtonElement | null>;
@@ -22,7 +22,7 @@ const CarouselAddCardButton = ({ nextButton }: Props) => {
     });
     setTimeout(() => {
       nextButton?.current?.click();
-    }, 100);
+    }, 50);
   };
 
   return (

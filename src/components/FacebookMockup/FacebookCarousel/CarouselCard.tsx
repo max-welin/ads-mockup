@@ -3,13 +3,15 @@ import type { CarouselCardData } from "../../../models/mockup.models";
 import UploadImageInput from "../../shared/UploadImageInput";
 import styles from "./Carousel.module.css";
 import CarouselCtaSection from "./CarouselCta/CarouselCtaSection";
+import CarouselRemoveCardButton from "./carouselButtons/CarouselRemoveCardButton";
 
 interface Props {
   i: number;
   carouselCard: CarouselCardData;
+  prevButton: React.RefObject<HTMLButtonElement | null>;
 }
 
-const CarouselCard = ({ i, carouselCard }: Props) => {
+const CarouselCard = ({ i, carouselCard, prevButton }: Props) => {
   const { setCarouselCardData, device } = useMockupContext();
 
   const onImageChange = (
@@ -23,15 +25,9 @@ const CarouselCard = ({ i, carouselCard }: Props) => {
     reader.onload = () => {
       const result = reader.result as string;
 
-      setCarouselCardData((prev) => {
-        const newArray = [...prev];
-        const newCarouselCard = {
-          ...newArray[index],
-          img: result,
-        };
-        newArray[index] = newCarouselCard;
-        return newArray;
-      });
+      setCarouselCardData((prev) =>
+        prev.map((card, i) => (i === index ? { ...card, img: result } : card))
+      );
     };
     reader.readAsDataURL(file);
 
@@ -52,6 +48,7 @@ const CarouselCard = ({ i, carouselCard }: Props) => {
         setCardData={setCarouselCardData}
         index={i}
       />
+      {i >= 3 && <CarouselRemoveCardButton prevButton={prevButton} i={i} />}
     </div>
   );
 };

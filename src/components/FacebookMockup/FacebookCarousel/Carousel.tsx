@@ -7,14 +7,15 @@ import type { CarouselCardData } from "../../../models/mockup.models";
 import CarouselCard from "./CarouselCard";
 
 import { useRef, useState } from "react";
-import CarouselAddCardButton from "./CarouselAddCardButton";
-import { NextArrow, PrevArrow } from "./CarouselButtons";
+import CarouselAddCardButton from "./carouselButtons/CarouselAddCardButton";
+import { NextArrow, PrevArrow } from "./carouselButtons/CarouselButtons";
 
 const Carousel = () => {
   const { carouselCardData, device } = useMockupContext();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextButton = useRef<HTMLButtonElement | null>(null);
+  const prevButton = useRef<HTMLButtonElement | null>(null);
 
   const slidesToShow = device === "desktop" ? 1.75 : 1.22;
   const isRightMost = currentIndex === carouselCardData.length - slidesToShow;
@@ -26,7 +27,7 @@ const Carousel = () => {
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     nextArrow: <NextArrow ref={nextButton} />,
-    prevArrow: <PrevArrow />,
+    prevArrow: <PrevArrow ref={prevButton} />,
     afterChange: (index: number) => setCurrentIndex(index),
   };
 
@@ -35,7 +36,11 @@ const Carousel = () => {
       <div className={styles.carousel}>
         <Slider {...settings} className={styles.slider}>
           {carouselCardData.map((carouselCard: CarouselCardData, i) => (
-            <CarouselCard i={i} carouselCard={carouselCard} />
+            <CarouselCard
+              i={i}
+              carouselCard={carouselCard}
+              prevButton={prevButton}
+            />
           ))}
         </Slider>
         {isRightMost && <CarouselAddCardButton nextButton={nextButton} />}
