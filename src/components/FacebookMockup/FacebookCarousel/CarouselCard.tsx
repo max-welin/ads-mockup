@@ -10,7 +10,7 @@ interface Props {
 }
 
 const CarouselCard = ({ i, carouselCard }: Props) => {
-  const { setCarouselCardData } = useMockupContext();
+  const { setCarouselCardData, device } = useMockupContext();
 
   const onImageChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -39,7 +39,12 @@ const CarouselCard = ({ i, carouselCard }: Props) => {
   };
 
   return (
-    <div key={i} className={styles.carouselCard}>
+    <div
+      key={i}
+      className={`${styles.carouselCard} ${
+        device === "mobile" ? styles.mobileCard : ""
+      }`}
+    >
       <img src={carouselCard.img} alt="Default image" />
       <UploadImageInput size={60} onChangeFn={(e) => onImageChange(e, i)} />
       <CarouselCtaSection

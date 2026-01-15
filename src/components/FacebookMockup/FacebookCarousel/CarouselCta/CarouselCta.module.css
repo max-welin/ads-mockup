@@ -5,6 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .titleContainer {

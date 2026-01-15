@@ -42,13 +42,15 @@ function PrevArrow(props: CustomArrowProps) {
 }
 
 const Carousel = () => {
-  const { carouselCardData } = useMockupContext();
+  const { carouselCardData, device } = useMockupContext();
+
+  const slidesToShow = device === "desktop" ? 1.75 : 1.2;
 
   const settings = {
     dots: false,
     infinite: false,
     speed: 300,
-    slidesToShow: 1.75,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,

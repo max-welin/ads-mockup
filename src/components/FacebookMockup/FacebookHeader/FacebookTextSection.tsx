@@ -4,18 +4,19 @@ import styles from "./FacebookHeader.module.css";
 import facebookMockupStyles from "../FacebookMockup.module.css";
 import EditableSpan from "../../shared/svg/EditableSpan";
 
-const MAX_CHARS = 130;
-
 const FacebookTextSection = () => {
-  const { headerDescription, setHeaderDescription } = useMockupContext();
+  const { headerDescription, setHeaderDescription, device } =
+    useMockupContext();
   const [expanded, setExpanded] = useState(false);
   const spanRef = useRef<HTMLSpanElement | null>(null);
 
-  const isOverflowing = headerDescription.length > MAX_CHARS;
+  const maxChars = device === "desktop" ? 130 : 81;
+
+  const isOverflowing = headerDescription.length > maxChars;
   const visibleText =
     expanded || !isOverflowing
       ? headerDescription
-      : headerDescription.slice(0, MAX_CHARS) + "…";
+      : headerDescription.slice(0, maxChars) + "…";
 
   return (
     <div className={styles.textSection}>
