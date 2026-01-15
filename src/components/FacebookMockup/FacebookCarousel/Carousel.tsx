@@ -1,59 +1,68 @@
-import { useMockupContext } from "../../../hooks/useMockupContext";
+import Slider from "react-slick";
 import styles from "./Carousel.module.css";
-import UploadImageInput from "../../shared/UploadImageInput";
-import CarouselCtaSection from "./CarouselCtaSection";
+import "slick-carousel/slick/slick.css";
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useMockupContext } from "../../../hooks/useMockupContext";
 import type { CarouselCardData } from "../../../models/mockup.models";
+import CarouselCard from "./CarouselCard";
+
+import type { CustomArrowProps } from "react-slick";
+
+function NextArrow(props: CustomArrowProps) {
+  const { className, style, onClick } = props;
+
+  return (
+    <button
+      type="button"
+      className={className}
+      style={style}
+      onClick={onClick}
+      aria-label="Next slide"
+    >
+      <ChevronRight size={25} />
+    </button>
+  );
+}
+
+function PrevArrow(props: CustomArrowProps) {
+  const { className, style, onClick } = props;
+
+  return (
+    <button
+      type="button"
+      className={className}
+      style={style}
+      onClick={onClick}
+      aria-label="Previous slide"
+    >
+      <ChevronLeft size={25} />
+    </button>
+  );
+}
 
 const Carousel = () => {
-  const { carouselCardData, setCarouselCardData } = useMockupContext();
+  const { carouselCardData } = useMockupContext();
 
-  const onImageChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    index: number
-  ) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      const result = reader.result as string;
-
-      setCarouselCardData((prev) => {
-        const newArray = [...prev];
-        const newCarouselCard = {
-          ...newArray[index],
-          img: result,
-        };
-        newArray[index] = newCarouselCard;
-        return newArray;
-      });
-    };
-    reader.readAsDataURL(file);
-
-    e.currentTarget.value = "";
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1.75,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
     <>
       <div className={styles.carousel}>
-        <div className={styles.carouselWrapper}></div>
-        {carouselCardData.map((carouselCard: CarouselCardData, i) => (
-          <div key={i} className={styles.carouselCard}>
-            <img src={carouselCard.img} alt="Default image" />
-            <UploadImageInput
-              size={60}
-              onChangeFn={(e) => onImageChange(e, i)}
-            />
-            <CarouselCtaSection
-              cardData={carouselCard}
-              setCardData={setCarouselCardData}
-              index={i}
-            />
-          </div>
-        ))}
+        <Slider {...settings} className={styles.slider}>
+          {carouselCardData.map((carouselCard: CarouselCardData, i) => (
+            <CarouselCard i={i} carouselCard={carouselCard} />
+          ))}
+        </Slider>
       </div>
-      <button style={{ padding: "6px 12px", marginRight: "6px" }}>&lt;-</button>
-      <button style={{ padding: "6px 12px" }}>-&gt;</button>
     </>
   );
 };

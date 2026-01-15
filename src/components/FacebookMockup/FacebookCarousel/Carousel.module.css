@@ -24,9 +24,45 @@
 .carousel {
   position: relative;
   width: auto;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
   padding: 13px;
-  overflow: hidden;
+}
+
+.slider :global(.slick-slide) {
+  padding: 0px 5px;
+}
+
+.slider :global(.slick-list) {
+  margin: 0px -5px;
+}
+
+.slider > button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+
+  > * {
+    margin-top: 3px;
+    color: #65676b;
+  }
+}
+
+.slider > :global(.slick-prev) {
+  left: 0;
+}
+
+.slider > :global(.slick-next) {
+  right: 0;
+}
+
+.slider > :global(.slick-disabled) {
+  opacity: 0;
+  pointer-events: none;
 }

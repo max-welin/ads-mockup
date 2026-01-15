@@ -1,8 +1,16 @@
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import {
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 import { createPortal } from "react-dom";
-import { useMockupContext } from "../../../hooks/useMockupContext";
-import facebookMockupStyles from "../FacebookMockup.module.css";
+import facebookMockupStyles from "../../FacebookMockup.module.css";
 import styles from "./CarouselCta.module.css";
+import { useMockupContext } from "../../../../hooks/useMockupContext";
+import type { CarouselCardData } from "../../../../models/mockup.models";
 
 const CTA_COPY_OPTIONS = [
   "learn more",
@@ -27,14 +35,24 @@ const CTA_COPY_OPTIONS = [
 
 type Pos = { top: number; left: number; width: number };
 
-const CarouselCtaButton = () => {
+interface Props {
+  index: number;
+  cardData: CarouselCardData;
+  setCardData: Dispatch<SetStateAction<CarouselCardData[]>>;
+}
+
+const CarouselCtaButton = ({ index, cardData, setCardData }: Props) => {
   const [showCopyOptions, setShowCopyOptions] = useState(false);
   const [pos, setPos] = useState<Pos>({ top: 0, left: 0, width: 0 });
 
   const anchorRef = useRef<HTMLDivElement>(null);
   const portalRoot = useMemo(() => document.body, []);
 
-  const { ctaCopy, setCtaCopy } = useMockupContext();
+  const setCtaCopy = (option: string) => {
+    setCardData((prev) =>
+      prev.map((card, i) => (i === index ? { ...card, ctaCopy: option } : card))
+    );
+  };
 
   useLayoutEffect(() => {
     if (!showCopyOptions) return;
@@ -71,11 +89,8 @@ const CarouselCtaButton = () => {
         {CTA_COPY_OPTIONS.map((option) => (
           <li
             key={option}
-            onClick={() => {
-              setCtaCopy(option);
-              close();
-            }}
-            className={option === ctaCopy ? styles.active : ""}
+            onClick={() => setCtaCopy(option)}
+            className={option === cardData.ctaCopy ? styles.active : ""}
           >
             {option}
           </li>
@@ -91,7 +106,7 @@ const CarouselCtaButton = () => {
       onMouseEnter={() => setShowCopyOptions(true)}
       onMouseLeave={() => setShowCopyOptions(false)}
     >
-      <p className={facebookMockupStyles.editable}>{ctaCopy}</p>
+      <p className={facebookMockupStyles.editable}>{cardData.ctaCopy}</p>
 
       {showCopyOptions && createPortal(dropdown, portalRoot)}
     </div>

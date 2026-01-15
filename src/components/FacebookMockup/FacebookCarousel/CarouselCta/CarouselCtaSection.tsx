@@ -1,9 +1,9 @@
-import EditableSpan from "../../shared/svg/EditableSpan";
-import facebookMockupStyles from "../FacebookMockup.module.css";
-import type { CarouselCardData } from "../../../models/mockup.models";
+import facebookMockupStyles from "../../FacebookMockup.module.css";
 import type { Dispatch, SetStateAction } from "react";
 import CarouselCtaButton from "./CarouselCtaButton";
-import styles from "../FacebookCtaSection/FacebookCtaSection.module.css";
+import styles from "../../FacebookCtaSection/FacebookCtaSection.module.css";
+import type { CarouselCardData } from "../../../../models/mockup.models";
+import EditableSpan from "../../../shared/svg/EditableSpan";
 
 interface Props {
   cardData: CarouselCardData;
@@ -13,19 +13,19 @@ interface Props {
 
 const CarouselCtaSection = ({ cardData, setCardData, index }: Props) => {
   const setCtaTitle = () => {
-    setCardData((prev) => {
-      const newArray = [...prev];
-      newArray[index].title = cardData.title;
-      return newArray;
-    });
+    setCardData((prev) =>
+      prev.map((card, i) =>
+        i === index ? { ...card, title: cardData.title } : card
+      )
+    );
   };
 
   const setCtaSectionDescription = () => {
-    setCardData((prev) => {
-      const newArray = [...prev];
-      newArray[index].description = cardData.description;
-      return newArray;
-    });
+    setCardData((prev) =>
+      prev.map((card, i) =>
+        i === index ? { ...card, description: cardData.description } : card
+      )
+    );
   };
 
   return (
@@ -48,7 +48,11 @@ const CarouselCtaSection = ({ cardData, setCardData, index }: Props) => {
         />
       </div>
 
-      <CarouselCtaButton />
+      <CarouselCtaButton
+        index={index}
+        cardData={cardData}
+        setCardData={setCardData}
+      />
     </div>
   );
 };

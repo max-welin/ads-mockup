@@ -6,7 +6,6 @@ import FacebookTextSection from "./FacebookHeader/FacebookTextSection";
 import FacebookImgSection from "./FacebookImageSection/FacebookImgSection";
 import FacebookInteractionSection from "./FacebookInteractionSection/FacebookInteractionSection";
 import styles from "./FacebookMockup.module.css";
-import Testing from "./Testing";
 
 const FacebookMockup = () => {
   const { setShowImageButton, device, format } = useMockupContext();
@@ -27,8 +26,7 @@ const FacebookMockup = () => {
           <FacebookCtaSection />
         </>
       ) : format === "carousel" ? (
-        // <Carousel />
-        <Testing />
+        <Carousel />
       ) : (
         ""
       )}
