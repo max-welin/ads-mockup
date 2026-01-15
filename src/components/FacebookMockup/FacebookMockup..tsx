@@ -27,9 +27,9 @@ const FacebookMockup = () => {
           <FacebookCtaSection />
         </>
       ) : format === "carousel" ? (
-        <Carousel />
+        // <Carousel />
+        <Testing />
       ) : (
-        // <Testing />
         ""
       )}
       <FacebookInteractionSection />

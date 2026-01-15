@@ -23,7 +23,7 @@ const CarouselCtaSection = ({ cardData, setCardData, index }: Props) => {
   const setCtaSectionDescription = () => {
     setCardData((prev) => {
       const newArray = [...prev];
-      newArray[index].title = cardData.description;
+      newArray[index].description = cardData.description;
       return newArray;
     });
   };
@@ -42,7 +42,7 @@ const CarouselCtaSection = ({ cardData, setCardData, index }: Props) => {
           onBlurFn={setCtaTitle}
         />
         <EditableSpan
-          className={styles.editable}
+          className={facebookMockupStyles.editable}
           text={cardData.description}
           onBlurFn={setCtaSectionDescription}
         />
