@@ -9,7 +9,6 @@ import {
 import { createPortal } from "react-dom";
 import facebookMockupStyles from "../../FacebookMockup.module.css";
 import styles from "./CarouselCta.module.css";
-import { useMockupContext } from "../../../../hooks/useMockupContext";
 import type { CarouselCardData } from "../../../../models/mockup.models";
 
 const CTA_COPY_OPTIONS = [

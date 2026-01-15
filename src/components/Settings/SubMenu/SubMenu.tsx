@@ -12,12 +12,12 @@ import type {
 import DeviceDesktopSvg from "../../shared/svg/DeviceDesktopSvg";
 import DeviceMobileSvg from "../../shared/svg/DeviceMobileSvg";
 import FormatCarouselSvg from "../../shared/svg/FormatCarouselSvg";
-import FormatReelSvg from "../../shared/svg/FormatReelSvg";
+// import FormatReelSvg from "../../shared/svg/FormatReelSvg";
 
 const FORMAT_MENU_BUTTONS: FormatMenuButton[] = [
   { text: "native", svg: <FormatNativeSvg /> },
   { text: "carousel", svg: <FormatCarouselSvg /> },
-  { text: "reel", svg: <FormatReelSvg /> },
+  // { text: "reel", svg: <FormatReelSvg /> },
 ];
 
 const DEVICE_MENU_BUTTONS: DeviceMenuButton[] = [

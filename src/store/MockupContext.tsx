@@ -57,7 +57,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
   const [ctaCopy, setCtaCopy] = useState<string>("learn more");
   const [url, setUrl] = useState<string>("www.landrover.com");
   const [device, setDevice] = useState<Device>("desktop");
-  const [format, setFormat] = useState<Format>("carousel");
+  const [format, setFormat] = useState<Format>("native");
   const [carouselCardData, setCarouselCardData] = useState<CarouselCardData[]>([
     {
       title: headerTitle,

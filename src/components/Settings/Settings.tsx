@@ -5,10 +5,15 @@ import FormatSvg from "../shared/svg/FormatNative";
 import DownloadButton from "./DownloadButton/DownloadButton";
 import SubMenu from "./SubMenu/SubMenu";
 import DeviceDesktopSvg from "../shared/svg/DeviceDesktopSvg";
+import { useMockupContext } from "../../hooks/useMockupContext";
+import FormatCarouselSvg from "../shared/svg/FormatCarouselSvg";
+import DeviceMobileSvg from "../shared/svg/DeviceMobileSvg";
 
 const SettingsMenu = () => {
   const [showFormat, setShowFormat] = useState(false);
   const [showDevice, setShowDevice] = useState(false);
+
+  const { format, device } = useMockupContext();
 
   return (
     <div className={styles.settingsContainer}>
@@ -18,7 +23,7 @@ const SettingsMenu = () => {
         setter={setShowFormat}
         className={`${styles.format} ${showFormat ? `${styles.active}` : ""}`}
       >
-        <FormatSvg />
+        {format === "native" ? <FormatSvg /> : <FormatCarouselSvg />}
         {showFormat && (
           <div className={`${styles.whiteSpace} ${styles.formatWhiteSpace}`} />
         )}
@@ -27,7 +32,7 @@ const SettingsMenu = () => {
         setter={setShowDevice}
         className={`${styles.options} ${showDevice ? `${styles.active}` : ""}`}
       >
-        <DeviceDesktopSvg />
+        {device === "desktop" ? <DeviceDesktopSvg /> : <DeviceMobileSvg />}
         {showDevice && (
           <div className={`${styles.whiteSpace} ${styles.deviceWhiteSpace}`} />
         )}

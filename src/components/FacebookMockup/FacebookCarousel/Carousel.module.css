@@ -88,7 +88,6 @@ slider > :global(.slick-disabled) {
   cursor: pointer;
   background-color: white;
   border: 1px solid var(--border);
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
