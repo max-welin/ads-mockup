@@ -1,7 +1,7 @@
 import facebookMockupStyles from "../../FacebookMockup.module.css";
 import type { Dispatch, SetStateAction } from "react";
 import CarouselCtaButton from "./CarouselCtaButton";
-import styles from "../../FacebookCtaSection/FacebookCtaSection.module.css";
+import styles from "./CarouselCta.module.css";
 import type { CarouselCardData } from "../../../../models/mockup.models";
 import EditableSpan from "../../../shared/svg/EditableSpan";
 
@@ -40,11 +40,13 @@ const CarouselCtaSection = ({ cardData, setCardData, index }: Props) => {
           className={`${styles.title} ${facebookMockupStyles.editable}`}
           text={cardData.title}
           onBlurFn={setCtaTitle}
+          maxLength={22}
         />
         <EditableSpan
-          className={facebookMockupStyles.editable}
+          className={`${styles.carousel} ${facebookMockupStyles.editable}`}
           text={cardData.description}
           onBlurFn={setCtaSectionDescription}
+          maxLength={28}
         />
       </div>
 

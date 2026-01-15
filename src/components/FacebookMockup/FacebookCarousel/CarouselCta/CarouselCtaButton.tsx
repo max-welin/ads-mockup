@@ -61,7 +61,7 @@ const CarouselCtaButton = ({ index, cardData, setCardData }: Props) => {
       const el = anchorRef.current;
       if (!el) return;
       const r = el.getBoundingClientRect();
-      setPos({ top: r.bottom / 4 - 8, left: r.right - 90, width: r.width });
+      setPos({ top: r.bottom / 4, left: r.right - 90, width: r.width });
     };
 
     update();
