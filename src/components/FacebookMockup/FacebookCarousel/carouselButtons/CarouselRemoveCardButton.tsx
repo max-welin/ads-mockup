@@ -1,6 +1,5 @@
 import { X } from "lucide-react";
 import styles from "../Carousel.module.css";
-import facebookStyles from "../../FacebookMockup.module.css";
 import { useMockupContext } from "../../../../hooks/useMockupContext";
 
 interface Props {

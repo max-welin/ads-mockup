@@ -12,7 +12,7 @@
   > button {
     position: relative;
     cursor: pointer;
-    padding: 12px 16px;
+    padding: 12px 12px;
     color: var(--main-gray);
     border: 1px solid transparent;
   }

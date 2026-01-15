@@ -1,10 +1,10 @@
 import SettingsButton from "../SettingsButton";
 import menuStyles from "../Settings.module.css";
 import styles from "./DownloadButton.module.css";
-import { Download } from "lucide-react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
 import { useCallback, useState } from "react";
 import { toPng } from "html-to-image";
+import DownloadSvg from "../../shared/svg/DownloadSvg";
 
 const DownloadButton = () => {
   const [showDownload, setShowDownload] = useState(false);
@@ -34,7 +34,7 @@ const DownloadButton = () => {
         showDownload ? `${menuStyles.active}` : ""
       }`}
     >
-      <Download size={32} />
+      <DownloadSvg />
       {showDownload && (
         <>
           <div

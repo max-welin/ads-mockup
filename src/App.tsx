@@ -6,7 +6,7 @@ import SettingsMenu from "./components/Settings/Settings";
 import { useMockupContext } from "./hooks/useMockupContext";
 
 function App() {
-  const { mainRef, format, device } = useMockupContext();
+  const { mainRef } = useMockupContext();
 
   return (
     <>
@@ -20,9 +20,6 @@ function App() {
       >
         <FacebookMockup />
       </main>
-      <p>
-        Format: {format}, Device: {device}
-      </p>
       <SettingsMenu />
       <Footer />
     </>
