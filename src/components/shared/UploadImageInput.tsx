@@ -8,13 +8,16 @@ interface UploadImageInpusProps {
 }
 
 const UploadImageInput = ({ size, onChangeFn }: UploadImageInpusProps) => {
-  const { showImageButton } = useMockupContext();
+  const { showImageButton, format } = useMockupContext();
+
+  const margin = format === "native" ? "auto" : "5% 5%";
 
   return (
     <label
       style={{
         height: `${size}px`,
         width: `${size}px`,
+        margin: margin,
       }}
       className={`${styles.circleButton} ${showImageButton ? styles.show : ""}`}
     >

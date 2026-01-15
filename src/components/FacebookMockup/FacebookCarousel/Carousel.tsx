@@ -44,7 +44,7 @@ function PrevArrow(props: CustomArrowProps) {
 const Carousel = () => {
   const { carouselCardData, device } = useMockupContext();
 
-  const slidesToShow = device === "desktop" ? 1.75 : 1.2;
+  const slidesToShow = device === "desktop" ? 1.75 : 1.22;
 
   const settings = {
     dots: false,

@@ -46,7 +46,7 @@ const CarouselCard = ({ i, carouselCard }: Props) => {
       }`}
     >
       <img src={carouselCard.img} alt="Default image" />
-      <UploadImageInput size={60} onChangeFn={(e) => onImageChange(e, i)} />
+      <UploadImageInput size={40} onChangeFn={(e) => onImageChange(e, i)} />
       <CarouselCtaSection
         cardData={carouselCard}
         setCardData={setCarouselCardData}
