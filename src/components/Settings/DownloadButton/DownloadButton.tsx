@@ -31,6 +31,7 @@ const DownloadButton = () => {
       mainRef.current.style.width = `${carouselList?.scrollWidth + 30}px`;
       if (carouselList) {
         carouselList.style.overflow = "visible";
+        carouselList.style.zIndex = "11";
       }
     }
 
@@ -52,6 +53,7 @@ const DownloadButton = () => {
             mainRef.current!.style.width = `auto`;
             if (carouselList) {
               carouselList.style.overflow = "hidden";
+              carouselList.style.zIndex = "0";
             }
             slickRef.current?.slickGoTo(currentSlideIndex, true);
             setDownloading(false);
