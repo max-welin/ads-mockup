@@ -11,7 +11,8 @@ import CarouselAddCardButton from "./carouselButtons/CarouselAddCardButton";
 import { NextArrow, PrevArrow } from "./carouselButtons/CarouselButtons";
 
 const Carousel = () => {
-  const { carouselCardData, device } = useMockupContext();
+  const { carouselCardData, device, carouselRef, slickRef } =
+    useMockupContext();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextButton = useRef<HTMLButtonElement | null>(null);
@@ -33,8 +34,8 @@ const Carousel = () => {
 
   return (
     <>
-      <div className={styles.carousel}>
-        <Slider {...settings} className={styles.slider}>
+      <div className={styles.carousel} ref={carouselRef}>
+        <Slider {...settings} className={styles.slider} ref={slickRef}>
           {carouselCardData.map((carouselCard: CarouselCardData, i) => (
             <CarouselCard
               i={i}

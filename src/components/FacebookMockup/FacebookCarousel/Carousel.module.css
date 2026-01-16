@@ -14,7 +14,7 @@
 }
 
 .carouselCard:hover .removeCardButton {
-  opacity: 0.75;
+  opacity: 0.3;
 }
 
 .mobile {
@@ -49,7 +49,7 @@
   width: 40px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: white;
+  background-color: #f0f0f0;
   border: 1px solid var(--border);
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
   transition: all 0.2 ease;
@@ -76,6 +76,10 @@ slider > :global(.slick-disabled) {
   pointer-events: none;
 }
 
+.slider > :global(.slick-list) {
+  /* overflow: visible; */
+}
+
 .addCardBtn {
   position: absolute;
   top: 50%;
@@ -86,7 +90,7 @@ slider > :global(.slick-disabled) {
   width: 40px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: white;
+  background-color: #f0f0f0;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -107,11 +111,12 @@ slider > :global(.slick-disabled) {
   border: none;
   border-radius: 50%;
   color: var(--main-gray);
-  opacity: 0.3;
+  opacity: 0;
   cursor: pointer;
   padding: 10px;
 
   &:hover {
+    opacity: 1 !important;
     > span {
       display: block;
     }

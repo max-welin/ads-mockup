@@ -27,7 +27,7 @@ const CarouselAddCardButton = ({ nextButton }: Props) => {
 
   return (
     <button onClick={addCarouselCard} className={styles.addCardBtn}>
-      <Plus size={25} />
+      <Plus size={30} strokeWidth={1.2} />
     </button>
   );
 };

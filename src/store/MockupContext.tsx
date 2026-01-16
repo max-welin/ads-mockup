@@ -7,33 +7,38 @@ import {
   type SetStateAction,
 } from "react";
 import type { CarouselCardData, Device, Format } from "../models/mockup.models";
+import type Slider from "react-slick";
 
 interface MockupContextValue {
-  mainRef: React.RefObject<HTMLElement | null>;
-  headerTitle: string;
-  headerImg: string;
-  mainImg: string;
-  carouselCardData: CarouselCardData[];
-  headerDescription: string;
-  ctaCopy: string;
-  ctaTitle: string;
   url: string;
-  ctaSectionDescription: string;
-  showImageButton: boolean;
   device: Device;
   format: Format;
-  setHeaderTitle: Dispatch<SetStateAction<string>>;
-  setHeaderImg: Dispatch<SetStateAction<string>>;
-  setMainImg: Dispatch<SetStateAction<string>>;
-  setCarouselCardData: Dispatch<SetStateAction<CarouselCardData[]>>;
-  setHeaderDescription: Dispatch<SetStateAction<string>>;
-  setCtaCopy: Dispatch<SetStateAction<string>>;
-  setCtaTitle: Dispatch<SetStateAction<string>>;
+  mainRef: React.RefObject<HTMLElement | null>;
+  ctaCopy: string;
+  mainImg: string;
+  slickRef: React.RefObject<Slider | null>;
+  ctaTitle: string;
+  headerImg: string;
+  carouselRef: React.RefObject<HTMLDivElement | null>;
+  headerTitle: string;
+  downloading: boolean;
+  showImageButton: boolean;
+  carouselCardData: CarouselCardData[];
+  headerDescription: string;
+  ctaSectionDescription: string;
   setUrl: Dispatch<SetStateAction<string>>;
-  setCtaSectionDescription: Dispatch<SetStateAction<string>>;
-  setShowImageButton: Dispatch<SetStateAction<boolean>>;
   setDevice: Dispatch<SetStateAction<Device>>;
   setFormat: Dispatch<SetStateAction<Format>>;
+  setMainImg: Dispatch<SetStateAction<string>>;
+  setCtaCopy: Dispatch<SetStateAction<string>>;
+  setCtaTitle: Dispatch<SetStateAction<string>>;
+  setHeaderImg: Dispatch<SetStateAction<string>>;
+  setDownloading: Dispatch<SetStateAction<boolean>>;
+  setHeaderTitle: Dispatch<SetStateAction<string>>;
+  setShowImageButton: Dispatch<SetStateAction<boolean>>;
+  setCarouselCardData: Dispatch<SetStateAction<CarouselCardData[]>>;
+  setHeaderDescription: Dispatch<SetStateAction<string>>;
+  setCtaSectionDescription: Dispatch<SetStateAction<string>>;
 }
 
 interface MockupProviderProps {
@@ -43,21 +48,24 @@ interface MockupProviderProps {
 export const MockupContext = createContext<MockupContextValue | null>(null);
 
 const MockupProvider = ({ children }: MockupProviderProps) => {
+  const [url, setUrl] = useState<string>("www.landrover.com");
+  const [device, setDevice] = useState<Device>("desktop");
+  const [format, setFormat] = useState<Format>("native");
+  const [mainImg, setMainImg] = useState<string>("/src/assets/land_rover.jpg");
+  const [ctaCopy, setCtaCopy] = useState<string>("learn more");
+  const [ctaTitle, setCtaTitle] = useState<string>("Land Rover Velar");
   const [headerImg, setHeaderImg] = useState<string>(
     "/src/assets/land-rover-logo.jpg"
   );
-  const [mainImg, setMainImg] = useState<string>("/src/assets/land_rover.jpg");
-  const [ctaTitle, setCtaTitle] = useState<string>("Land Rover Velar");
   const [headerTitle, setHeaderTitle] = useState<string>("Land Rover");
+  const [downloading, setDownloading] = useState(false);
   const [headerDescription, setHeaderDescription] = useState<string>(
     "Discover Land Rover's luxurious SUVs. Ready for adventure."
   );
   const [ctaSectionDescription, setCtaSectionDescription] =
     useState<string>("Book a test drive");
-  const [ctaCopy, setCtaCopy] = useState<string>("learn more");
-  const [url, setUrl] = useState<string>("www.landrover.com");
-  const [device, setDevice] = useState<Device>("desktop");
-  const [format, setFormat] = useState<Format>("native");
+  const [showImageButton, setShowImageButton] = useState<boolean>(false);
+
   const [carouselCardData, setCarouselCardData] = useState<CarouselCardData[]>([
     {
       title: headerTitle,
@@ -79,36 +87,40 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     },
   ]);
 
-  const [showImageButton, setShowImageButton] = useState<boolean>(false);
-
   const mainRef = useRef<HTMLElement>(null);
+  const slickRef = useRef<Slider | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const value: MockupContextValue = {
-    mainRef,
-    headerTitle,
-    headerImg,
-    mainImg,
-    carouselCardData,
-    headerDescription,
-    ctaCopy,
-    ctaTitle,
     url,
-    ctaSectionDescription,
-    showImageButton,
     device,
     format,
-    setHeaderTitle,
-    setHeaderImg,
-    setMainImg,
-    setCarouselCardData,
-    setHeaderDescription,
-    setCtaCopy,
-    setCtaTitle,
+    ctaCopy,
+    mainImg,
+    mainRef,
+    slickRef,
+    ctaTitle,
+    headerImg,
+    carouselRef,
+    downloading,
+    headerTitle,
+    showImageButton,
+    carouselCardData,
+    headerDescription,
+    ctaSectionDescription,
     setUrl,
-    setCtaSectionDescription,
-    setShowImageButton,
     setDevice,
     setFormat,
+    setCtaCopy,
+    setMainImg,
+    setCtaTitle,
+    setHeaderImg,
+    setHeaderTitle,
+    setDownloading,
+    setShowImageButton,
+    setCarouselCardData,
+    setHeaderDescription,
+    setCtaSectionDescription,
   };
 
   return (

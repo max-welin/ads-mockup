@@ -21,16 +21,19 @@ const FacebookCtaSection = () => {
           className={`${facebookMockupStyles.url} ${styles.editable}`}
           text={url}
           onBlurFn={setUrl}
+          maxLength={50}
         />
         <EditableSpan
           className={`${facebookMockupStyles.title} ${styles.editable}`}
           text={ctaTitle}
           onBlurFn={setCtaTitle}
+          maxLength={90}
         />
         <EditableSpan
           className={styles.editable}
           text={ctaSectionDescription}
           onBlurFn={setCtaSectionDescription}
+          maxLength={55}
         />
       </div>
 

@@ -8,12 +8,12 @@ footer {
 footer a {
   text-decoration: none;
   color: #666;
-  font-size: 7px;
+  font-size: 10px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
 footer img {
-  width: 53px;
+  width: 75px;
 }

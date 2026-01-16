@@ -15,7 +15,7 @@ const NextArrow = forwardRef<HTMLButtonElement, CustomArrowProps>(
         onClick={onClick}
         aria-label="Next slide"
       >
-        <ChevronRight size={25} />
+        <ChevronRight size={30} strokeWidth={1.2} />
       </button>
     );
   }
@@ -34,7 +34,7 @@ const PrevArrow = forwardRef<HTMLButtonElement, CustomArrowProps>(
         onClick={onClick}
         aria-label="Previous slide"
       >
-        <ChevronLeft size={25} />
+        <ChevronLeft size={30} strokeWidth={1.2} />
       </button>
     );
   }

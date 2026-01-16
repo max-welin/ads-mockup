@@ -24,7 +24,7 @@ const CarouselRemoveCardButton = ({ prevButton, i }: Props) => {
   return (
     <button className={styles.removeCardButton} onClick={() => removeCard(i)}>
       <span>Remove Carousel Item</span>
-      <X size={65} />
+      <X size={65} strokeWidth={1.2} />
     </button>
   );
 };
