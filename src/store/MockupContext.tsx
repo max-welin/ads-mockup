@@ -24,6 +24,7 @@ interface MockupContextValue {
   downloading: boolean;
   showImageButton: boolean;
   carouselCardData: CarouselCardData[];
+  currentSlideIndex: number;
   headerDescription: string;
   ctaSectionDescription: string;
   setUrl: Dispatch<SetStateAction<string>>;
@@ -37,6 +38,7 @@ interface MockupContextValue {
   setHeaderTitle: Dispatch<SetStateAction<string>>;
   setShowImageButton: Dispatch<SetStateAction<boolean>>;
   setCarouselCardData: Dispatch<SetStateAction<CarouselCardData[]>>;
+  setCurrentSlideIndex: Dispatch<SetStateAction<number>>;
   setHeaderDescription: Dispatch<SetStateAction<string>>;
   setCtaSectionDescription: Dispatch<SetStateAction<string>>;
 }
@@ -59,6 +61,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
   );
   const [headerTitle, setHeaderTitle] = useState<string>("Land Rover");
   const [downloading, setDownloading] = useState(false);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [headerDescription, setHeaderDescription] = useState<string>(
     "Discover Land Rover's luxurious SUVs. Ready for adventure."
   );
@@ -106,6 +109,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     headerTitle,
     showImageButton,
     carouselCardData,
+    currentSlideIndex,
     headerDescription,
     ctaSectionDescription,
     setUrl,
@@ -120,6 +124,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     setShowImageButton,
     setCarouselCardData,
     setHeaderDescription,
+    setCurrentSlideIndex,
     setCtaSectionDescription,
   };
 

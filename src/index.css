@@ -44,20 +44,11 @@ main {
   > div {
     border-radius: 50%;
     border: 2px solid transparent;
-    border-color: transparent var(--main-gray) var(--main-gray) var(--main-gray);
+    border-color: transparent var(--main-gray) var(--main-gray);
     height: 100px;
     width: 100px;
     animation: rotateInfinite 1s linear infinite;
   }
-}
-
-#spinner {
-  border-radius: 50%;
-  border: 2px solid transparent;
-  border-color: transparent var(--main-gray) var(--main-gray) var(--main-gray);
-  height: 100px;
-  width: 100px;
-  animation: rotateInfinite 1s linear infinite;
 }
 
 @keyframes rotateInfinite {

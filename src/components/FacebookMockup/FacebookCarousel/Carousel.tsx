@@ -11,15 +11,21 @@ import CarouselAddCardButton from "./carouselButtons/CarouselAddCardButton";
 import { NextArrow, PrevArrow } from "./carouselButtons/CarouselButtons";
 
 const Carousel = () => {
-  const { carouselCardData, device, carouselRef, slickRef } =
-    useMockupContext();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const {
+    carouselCardData,
+    device,
+    carouselRef,
+    slickRef,
+    currentSlideIndex,
+    setCurrentSlideIndex,
+  } = useMockupContext();
 
   const nextButton = useRef<HTMLButtonElement | null>(null);
   const prevButton = useRef<HTMLButtonElement | null>(null);
 
   const slidesToShow = device === "desktop" ? 1.75 : 1.22;
-  const isRightMost = currentIndex === carouselCardData.length - slidesToShow;
+  const isRightMost =
+    currentSlideIndex === carouselCardData.length - slidesToShow;
 
   const settings = {
     dots: false,
@@ -29,7 +35,7 @@ const Carousel = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow ref={nextButton} />,
     prevArrow: <PrevArrow ref={prevButton} />,
-    afterChange: (index: number) => setCurrentIndex(index),
+    afterChange: (index: number) => setCurrentSlideIndex(index),
   };
 
   return (

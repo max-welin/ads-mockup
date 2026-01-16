@@ -38,6 +38,8 @@ const ICONS: Record<Reaction, React.FC> = {
   angry: EmojiAngry,
 };
 
+const rnd = Math.floor(Math.random() * 179 + 20).toString();
+
 const FacebookReactions = () => {
   const [showReactionSelection, setShowReactionSelection] = useState(false);
   const [selected, setSelected] = useState<Reaction[]>(["like", "heart"]);
@@ -68,7 +70,7 @@ const FacebookReactions = () => {
         })}
       </div>
       {selected.length >= 1 ? (
-        <p>136</p>
+        <p>{rnd}</p>
       ) : (
         <p className={facebookMockupStyles.addReaction}>+ Add reaction</p>
       )}

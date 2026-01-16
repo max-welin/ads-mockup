@@ -4,14 +4,17 @@ import ShareSvg from "../../shared/svg/ShareSvg";
 import styles from "./FacebookInteractionSection.module.css";
 import FacebookReactions from "./FacebookReactions";
 
+const comments = Math.floor(Math.random() * 20 + 10);
+const shares = Math.floor(Math.random() * 8 + 2);
+
 const FacebookInteractionSection = () => {
   return (
     <div className={styles.interactionsContainer}>
       <div className={styles.interactionsTop}>
         <FacebookReactions />
         <div className={styles.commentsContainer}>
-          <p>28 comments</p>
-          <p>2 shares</p>
+          <p>{comments} comments</p>
+          <p>{shares} shares</p>
         </div>
       </div>
       <div className={styles.interactionsBottom}>

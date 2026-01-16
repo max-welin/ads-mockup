@@ -9,8 +9,14 @@ import DownloadSvg from "../../shared/svg/DownloadSvg";
 const DownloadButton = () => {
   const [showDownload, setShowDownload] = useState(false);
 
-  const { mainRef, carouselRef, format, setDownloading, slickRef } =
-    useMockupContext();
+  const {
+    mainRef,
+    carouselRef,
+    format,
+    setDownloading,
+    slickRef,
+    currentSlideIndex,
+  } = useMockupContext();
 
   const downloadTimeout = format === "carousel" ? 750 : 0;
 
@@ -47,6 +53,7 @@ const DownloadButton = () => {
             if (carouselList) {
               carouselList.style.overflow = "hidden";
             }
+            slickRef.current?.slickGoTo(currentSlideIndex, true);
             setDownloading(false);
           }
         })
