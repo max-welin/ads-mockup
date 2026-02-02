@@ -6,8 +6,6 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--border);
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
 }
 
 .titleContainer {

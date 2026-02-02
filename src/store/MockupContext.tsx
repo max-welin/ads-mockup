@@ -8,6 +8,7 @@ import {
 } from "react";
 import type { CarouselCardData, Device, Format } from "../models/mockup.models";
 import type Slider from "react-slick";
+import { DEFAULT_DATA } from "../config/defaultData";
 
 interface MockupContextValue {
   url: string;
@@ -50,23 +51,26 @@ interface MockupProviderProps {
 export const MockupContext = createContext<MockupContextValue | null>(null);
 
 const MockupProvider = ({ children }: MockupProviderProps) => {
-  const [url, setUrl] = useState<string>("www.landrover.com");
-  const [device, setDevice] = useState<Device>("desktop");
-  const [format, setFormat] = useState<Format>("native");
-  const [mainImg, setMainImg] = useState<string>("/src/assets/land_rover.jpg");
-  const [ctaCopy, setCtaCopy] = useState<string>("learn more");
-  const [ctaTitle, setCtaTitle] = useState<string>("Land Rover Velar");
-  const [headerImg, setHeaderImg] = useState<string>(
-    "/src/assets/land-rover-logo.jpg"
+  const [url, setUrl] = useState<string>(DEFAULT_DATA.url);
+  const [device, setDevice] = useState<Device>(DEFAULT_DATA.device);
+  const [format, setFormat] = useState<Format>(DEFAULT_DATA.format);
+  const [mainImg, setMainImg] = useState<string>(DEFAULT_DATA.image);
+  const [ctaCopy, setCtaCopy] = useState<string>(DEFAULT_DATA.ctaCopy);
+  const [ctaTitle, setCtaTitle] = useState<string>(
+    DEFAULT_DATA.ctaSectionTitle,
   );
-  const [headerTitle, setHeaderTitle] = useState<string>("Land Rover");
+  const [headerImg, setHeaderImg] = useState<string>(DEFAULT_DATA.headerIcon);
+  const [headerTitle, setHeaderTitle] = useState<string>(
+    DEFAULT_DATA.headerTitle,
+  );
   const [downloading, setDownloading] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [headerDescription, setHeaderDescription] = useState<string>(
-    "Discover Land Rover's luxurious SUVs. Ready for adventure."
+    DEFAULT_DATA.headerDescription,
   );
-  const [ctaSectionDescription, setCtaSectionDescription] =
-    useState<string>("Book a test drive");
+  const [ctaSectionDescription, setCtaSectionDescription] = useState<string>(
+    DEFAULT_DATA.ctaSectionDescription,
+  );
   const [showImageButton, setShowImageButton] = useState<boolean>(false);
 
   const [carouselCardData, setCarouselCardData] = useState<CarouselCardData[]>([
