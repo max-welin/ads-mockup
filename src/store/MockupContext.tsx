@@ -6,7 +6,12 @@ import {
   type ReactNode,
   type SetStateAction,
 } from "react";
-import type { CarouselCardData, Device, Format } from "../models/mockup.models";
+import type {
+  CarouselCardData,
+  Device,
+  Format,
+  Platform,
+} from "../models/mockup.models";
 import type Slider from "react-slick";
 import { DEFAULT_DATA } from "../config/defaultData";
 
@@ -17,6 +22,7 @@ interface MockupContextValue {
   mainRef: React.RefObject<HTMLElement | null>;
   ctaCopy: string;
   mainImg: string;
+  platform: Platform;
   slickRef: React.RefObject<Slider | null>;
   ctaTitle: string;
   headerImg: string;
@@ -34,6 +40,7 @@ interface MockupContextValue {
   setMainImg: Dispatch<SetStateAction<string>>;
   setCtaCopy: Dispatch<SetStateAction<string>>;
   setCtaTitle: Dispatch<SetStateAction<string>>;
+  setPlatform: Dispatch<SetStateAction<Platform>>;
   setHeaderImg: Dispatch<SetStateAction<string>>;
   setDownloading: Dispatch<SetStateAction<boolean>>;
   setHeaderTitle: Dispatch<SetStateAction<string>>;
@@ -56,6 +63,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
   const [format, setFormat] = useState<Format>(DEFAULT_DATA.format);
   const [mainImg, setMainImg] = useState<string>(DEFAULT_DATA.image);
   const [ctaCopy, setCtaCopy] = useState<string>(DEFAULT_DATA.ctaCopy);
+  const [platform, setPlatform] = useState<Platform>(DEFAULT_DATA.platform);
   const [ctaTitle, setCtaTitle] = useState<string>(
     DEFAULT_DATA.ctaSectionTitle,
   );
@@ -105,6 +113,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     ctaCopy,
     mainImg,
     mainRef,
+    platform,
     slickRef,
     ctaTitle,
     headerImg,
@@ -122,6 +131,7 @@ const MockupProvider = ({ children }: MockupProviderProps) => {
     setCtaCopy,
     setMainImg,
     setCtaTitle,
+    setPlatform,
     setHeaderImg,
     setHeaderTitle,
     setDownloading,

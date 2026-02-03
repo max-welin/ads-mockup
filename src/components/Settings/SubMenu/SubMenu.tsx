@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import FormatNativeSvg from "../../shared/svg/FormatNative";
+import FormatNativeSvg from "../../shared/svg/FormatNativeSvg";
 import styles from "./SubMenu.module.css";
 import SubMenuButton from "./SubMenuButton";
 import type {

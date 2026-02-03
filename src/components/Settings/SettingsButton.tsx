@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { useMockupContext } from "../../hooks/useMockupContext";
 
 interface SettingsButtonProps {
   children: ReactNode;
@@ -13,12 +14,17 @@ const SettingsButton = ({
   className,
   handleClick,
 }: SettingsButtonProps) => {
+  const { platform } = useMockupContext();
+
+  const borderRadius = platform === "instagram" ? "12px" : "";
+
   return (
     <button
       onClick={handleClick}
       onMouseEnter={() => setter(true)}
       onMouseLeave={() => setter(false)}
       className={className}
+      style={{ borderTopLeftRadius: borderRadius }}
     >
       {children}
     </button>

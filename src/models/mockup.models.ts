@@ -1,6 +1,8 @@
 import type { JSX } from "react";
 
-export type Format = "native" | "carousel" | "reel";
+export type Format = "native" | "carousel";
+
+export type Platform = "facebook" | "instagram";
 
 export type Device = "desktop" | "mobile";
 

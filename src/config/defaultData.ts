@@ -1,6 +1,7 @@
-import type { Device, Format } from "../models/mockup.models";
+import type { Device, Format, Platform } from "../models/mockup.models";
 
 export type DefaultData = {
+  platform: Platform;
   url: string;
   device: Device;
   format: Format;
@@ -14,6 +15,7 @@ export type DefaultData = {
 };
 
 export const DEFAULT_DATA: DefaultData = {
+  platform: "facebook",
   url: "www.landrover.com",
   device: "desktop",
   format: "native",

@@ -3,7 +3,7 @@ import { useMockupContext } from "../../../hooks/useMockupContext";
 import styles from "./FacebookHeader.module.css";
 import facebookMockupStyles from "../FacebookMockup.module.css";
 import GlobeSvg from "../../shared/svg/GlobeSvg";
-import EditableSpan from "../../shared/svg/EditableSpan";
+import EditableSpan from "../../shared/EditableSpan";
 import UploadImageInput from "../../shared/UploadImageInput";
 import { onImageChange } from "../../../utils/onImageChange";
 import { useRef } from "react";
@@ -30,7 +30,8 @@ const FacebookHeaderSection = () => {
           ref={testRef}
           className={`${styles.title} ${facebookMockupStyles.editable}`}
           text={headerTitle}
-          onBlurFn={(e) => console.log(e.target.offsetWidth)}
+          onBlurFn={setHeaderTitle}
+          maxLength={50}
         />
 
         <p>

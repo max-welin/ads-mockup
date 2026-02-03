@@ -3,7 +3,7 @@ import type { Dispatch, SetStateAction } from "react";
 import CarouselCtaButton from "./CarouselCtaButton";
 import styles from "./CarouselCta.module.css";
 import type { CarouselCardData } from "../../../../models/mockup.models";
-import EditableSpan from "../../../shared/svg/EditableSpan";
+import EditableSpan from "../../../shared/EditableSpan";
 
 interface Props {
   cardData: CarouselCardData;
@@ -15,16 +15,16 @@ const CarouselCtaSection = ({ cardData, setCardData, index }: Props) => {
   const setCtaTitle = () => {
     setCardData((prev) =>
       prev.map((card, i) =>
-        i === index ? { ...card, title: cardData.title } : card
-      )
+        i === index ? { ...card, title: cardData.title } : card,
+      ),
     );
   };
 
   const setCtaSectionDescription = () => {
     setCardData((prev) =>
       prev.map((card, i) =>
-        i === index ? { ...card, description: cardData.description } : card
-      )
+        i === index ? { ...card, description: cardData.description } : card,
+      ),
     );
   };
 

@@ -8,6 +8,7 @@ import DownloadSvg from "../../shared/svg/DownloadSvg";
 
 const DownloadButton = () => {
   const [showDownload, setShowDownload] = useState(false);
+  const { platform } = useMockupContext();
 
   const {
     mainRef,
@@ -19,6 +20,7 @@ const DownloadButton = () => {
   } = useMockupContext();
 
   const downloadTimeout = format === "carousel" ? 750 : 0;
+  const borderTopLeftRadius = platform === "instagram" ? "12px" : "0px";
 
   const handleDownload = () => {
     if (!mainRef.current) return;
@@ -78,6 +80,7 @@ const DownloadButton = () => {
         <>
           <div
             className={`${menuStyles.whiteSpace} ${styles.downloadWhiteSpace}`}
+            style={{ borderTopLeftRadius: borderTopLeftRadius }}
           />
           <div className={styles.downloadBanner}>Download</div>
         </>
