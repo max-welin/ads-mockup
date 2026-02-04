@@ -4,14 +4,14 @@ import InstagramSvg from "../shared/svg/InstagramSvg";
 import styles from "./PlatformMenu.module.css";
 
 const PlatformMenu = () => {
-  const { setPlatform } = useMockupContext();
+  const { setPlatform, platform } = useMockupContext();
 
   return (
     <div className={styles.menuContainer}>
-      <button onClick={() => setPlatform("facebook")}>
+      <button onClick={() => setPlatform("facebook")} className={`${platform === "facebook" ? styles.active : ""}`}>
         <FacebookSvg />
       </button>
-      <button onClick={() => setPlatform("instagram")}>
+      <button onClick={() => setPlatform("instagram")} className={`${platform === "instagram" ? styles.active : ""}`}>
         <InstagramSvg />
       </button>
     </div>

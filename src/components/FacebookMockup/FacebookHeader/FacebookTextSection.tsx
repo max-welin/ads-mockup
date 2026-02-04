@@ -24,7 +24,7 @@ const FacebookTextSection = () => {
         className={facebookMockupStyles.editable}
         text={visibleText}
         onBlurFn={setHeaderDescription}
-        ref={spanRef}
+        spanRef={spanRef}
       />
 
       {isOverflowing && !expanded && (

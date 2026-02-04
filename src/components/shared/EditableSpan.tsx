@@ -1,33 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 
-interface EditableSpanProps {
+interface EditableSpanProps extends React.HTMLAttributes<HTMLSpanElement> {
   text: string;
   className: string;
-  onBlurFn: React.Dispatch<React.SetStateAction<string>>;
-  ref?: React.Ref<HTMLSpanElement>;
+  onBlurFn: (value: string) => void;
+  spanRef?: React.Ref<HTMLSpanElement>;
   maxLength?: number;
 }
 
-const EditableSpan = ({
+const EditableSpan: React.FC<EditableSpanProps> = ({
   text,
   className,
   onBlurFn,
-  ref,
+  spanRef,
   maxLength,
   ...props
-}: EditableSpanProps) => {
-  const [slicedText, setSlicedText] = useState("");
-
-  let updatedText = null;
-
+}) => {
   const handleBlur = (e: React.FocusEvent<HTMLSpanElement>) => {
-    if (maxLength) {
-      updatedText = e.currentTarget.textContent?.slice(0, maxLength - 3) ?? "";
-      setSlicedText(updatedText);
-    } else {
-      updatedText = e.currentTarget.textContent ?? "";
-    }
-    onBlurFn(updatedText);
+    const rawText = e.currentTarget.textContent ?? "";
+    const nextText = maxLength ? rawText.slice(0, maxLength - 3) : rawText;
+    onBlurFn(nextText);
   };
 
   return (
@@ -36,9 +28,10 @@ const EditableSpan = ({
       suppressContentEditableWarning
       className={className}
       onBlur={handleBlur}
+      ref={spanRef}
       {...props}
     >
-      {slicedText ? slicedText : text}
+      {text}
     </span>
   );
 };

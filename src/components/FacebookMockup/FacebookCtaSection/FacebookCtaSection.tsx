@@ -1,10 +1,24 @@
+import type { ComponentType } from "react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import facebookMockupStyles from "./FacebookCtaSection.module.css";
-import styles from "../FacebookMockup.module.css";
 import EditableSpan from "../../shared/EditableSpan";
-import FacebookCtaButton from "./FacebookCtaButton";
 
-const FacebookCtaSection = () => {
+type CtaSectionClasses = {
+  container: string;
+  titleContainer: string;
+  url: string;
+  title: string;
+  editable: string;
+};
+
+interface Props {
+  classes: CtaSectionClasses;
+  CtaButton?: ComponentType;
+}
+
+const GenericCtaSection = ({
+  classes,
+  CtaButton,
+}: Props) => {
   const {
     url,
     setUrl,
@@ -15,31 +29,33 @@ const FacebookCtaSection = () => {
   } = useMockupContext();
 
   return (
-    <div className={facebookMockupStyles.ctaContainer}>
-      <div className={facebookMockupStyles.titleContainer}>
+    <div className={classes.container}>
+      <div className={classes.titleContainer}>
         <EditableSpan
-          className={`${facebookMockupStyles.url} ${styles.editable}`}
+          className={`${classes.url} ${classes.editable}`}
           text={url}
           onBlurFn={setUrl}
           maxLength={50}
         />
+
         <EditableSpan
-          className={`${facebookMockupStyles.title} ${styles.editable}`}
+          className={`${classes.title} ${classes.editable}`}
           text={ctaTitle}
           onBlurFn={setCtaTitle}
           maxLength={90}
         />
+
         <EditableSpan
-          className={styles.editable}
+          className={classes.editable}
           text={ctaSectionDescription}
           onBlurFn={setCtaSectionDescription}
           maxLength={55}
         />
       </div>
 
-      <FacebookCtaButton />
+      {CtaButton && <CtaButton />}
     </div>
   );
 };
 
-export default FacebookCtaSection;
+export default GenericCtaSection;

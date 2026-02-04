@@ -1,6 +1,7 @@
 import { useMockupContext } from "../../hooks/useMockupContext";
 import Carousel from "./FacebookCarousel/Carousel";
-import FacebookCtaSection from "./FacebookCtaSection/FacebookCtaSection";
+import FacebookCtaButton from "./FacebookCtaSection/FacebookCtaButton";
+import MockupCtaSection from "./FacebookCtaSection/FacebookCtaSection";
 import FacebookHeaderSection from "./FacebookHeader/FacebookHeader";
 import FacebookTextSection from "./FacebookHeader/FacebookTextSection";
 import FacebookImgSection from "./FacebookImageSection/FacebookImgSection";
@@ -23,7 +24,15 @@ const FacebookMockup = () => {
       {format === "native" ? (
         <>
           <FacebookImgSection />
-          <FacebookCtaSection />
+          <MockupCtaSection
+           classes={{
+            container: styles.ctaContainer,
+            titleContainer: styles.titleContainer,
+            url: styles.url,
+            title: styles.title,
+            editable: styles.editable,
+         }}
+           CtaButton={FacebookCtaButton}/>
         </>
       ) : format === "carousel" ? (
         <Carousel />
