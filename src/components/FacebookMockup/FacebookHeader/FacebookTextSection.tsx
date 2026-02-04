@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import styles from "./FacebookHeader.module.css";
-import facebookMockupStyles from "../FacebookMockup.module.css";
+import styles from "../FacebookMockup.module.css";
 import EditableSpan from "../../shared/EditableSpan";
 
 const FacebookTextSection = () => {
@@ -21,7 +20,7 @@ const FacebookTextSection = () => {
   return (
     <div className={styles.textSection}>
       <EditableSpan
-        className={facebookMockupStyles.editable}
+        className={styles.editable}
         text={visibleText}
         onBlurFn={setHeaderDescription}
         spanRef={spanRef}

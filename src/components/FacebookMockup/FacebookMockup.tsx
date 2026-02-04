@@ -2,7 +2,7 @@ import { useMockupContext } from "../../hooks/useMockupContext";
 import Carousel from "./FacebookCarousel/Carousel";
 import FacebookCtaButton from "./FacebookCtaSection/FacebookCtaButton";
 import MockupCtaSection from "./FacebookCtaSection/FacebookCtaSection";
-import FacebookHeaderSection from "./FacebookHeader/FacebookHeader";
+import MokcupHeaderSection from "./FacebookHeader/FacebookHeader";
 import FacebookTextSection from "./FacebookHeader/FacebookTextSection";
 import FacebookImgSection from "./FacebookImageSection/FacebookImgSection";
 import FacebookInteractionSection from "./FacebookInteractionSection/FacebookInteractionSection";
@@ -19,20 +19,30 @@ const FacebookMockup = () => {
       onMouseEnter={() => setShowImageButton(true)}
       onMouseLeave={() => setShowImageButton(false)}
     >
-      <FacebookHeaderSection />
+      <MokcupHeaderSection
+        classes={{
+          container: styles.mockupHeader,
+          imgContainer: styles.imgContainer,
+          titleContainer: styles.headerTitleContainer,
+          editable: styles.editable,
+          buttonContainer: styles.buttonContainer,
+        }}
+        showGlobe={true}
+      />
       <FacebookTextSection />
       {format === "native" ? (
         <>
           <FacebookImgSection />
           <MockupCtaSection
-           classes={{
-            container: styles.ctaContainer,
-            titleContainer: styles.titleContainer,
-            url: styles.url,
-            title: styles.title,
-            editable: styles.editable,
-         }}
-           CtaButton={FacebookCtaButton}/>
+            classes={{
+              container: styles.ctaContainer,
+              titleContainer: styles.titleContainer,
+              url: styles.url,
+              title: styles.title,
+              editable: styles.editable,
+            }}
+            CtaButton={FacebookCtaButton}
+          />
         </>
       ) : format === "carousel" ? (
         <Carousel />

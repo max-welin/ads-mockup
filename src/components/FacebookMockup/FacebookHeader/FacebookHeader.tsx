@@ -1,42 +1,60 @@
-import { Ellipsis, X } from "lucide-react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import styles from "./FacebookHeader.module.css";
-import facebookMockupStyles from "../FacebookMockup.module.css";
-import GlobeSvg from "../../shared/svg/GlobeSvg";
 import EditableSpan from "../../shared/EditableSpan";
 import UploadImageInput from "../../shared/UploadImageInput";
 import { onImageChange } from "../../../utils/onImageChange";
+import GlobeSvg from "../../shared/svg/GlobeSvg";
+import { Ellipsis, X } from "lucide-react";
 
-const FacebookHeaderSection = () => {
+type HeaderSectionClasses = {
+  container: string;
+  imgContainer: string;
+  titleContainer: string;
+  editable: string;
+  buttonContainer: string;
+};
+
+interface HeaderSectionProps {
+  classes: HeaderSectionClasses;
+  showUpload?: boolean;
+  showGlobe?: boolean;
+}
+
+const MokcupHeaderSection = ({
+  classes,
+  showGlobe = false,
+}: HeaderSectionProps) => {
   const { headerImg, setHeaderImg, headerTitle, setHeaderTitle } =
     useMockupContext();
 
-  const onHeaderImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onImageChange(e, setHeaderImg);
   };
 
   return (
-    <div className={styles.mockupHeader}>
-      <div className={styles.imgContainer}>
+    <div className={classes.container}>
+      <div className={classes.imgContainer}>
         <img src={headerImg} alt={`${headerTitle} logo`} />
-        <UploadImageInput size={36} onChangeFn={onHeaderImageChange} />
+        <UploadImageInput size={36} onChangeFn={handleImageChange} />
       </div>
 
-      <div className={styles.headerTitleContainer}>
+      <div className={classes.titleContainer}>
         <EditableSpan
-          className={`${styles.title} ${facebookMockupStyles.editable}`}
+          className={classes.editable}
           text={headerTitle}
           onBlurFn={setHeaderTitle}
           maxLength={50}
         />
-
-        <p>
-          Sponsored <span aria-hidden="true"> · </span>
-          <GlobeSvg />
-        </p>
+          <p>Sponsored
+            {showGlobe && (
+              <>
+                <span aria-hidden="true"> · </span>
+                <GlobeSvg />
+              </>
+            )}
+          </p>
       </div>
 
-      <div className={styles.buttonContainer}>
+      <div className={classes.buttonContainer}>
         <Ellipsis size={20} />
         <X size={22} />
       </div>
@@ -44,4 +62,4 @@ const FacebookHeaderSection = () => {
   );
 };
 
-export default FacebookHeaderSection;
+export default MokcupHeaderSection;
