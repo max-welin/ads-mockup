@@ -1,30 +1,19 @@
 import { useState } from "react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import facebookMockupStyles from "../FacebookMockup.module.css";
-import styles from "./FacebookCtaSection.module.css";
+import { CTA_COPY_OPTIONS } from "../../../config/ctaButtonOptions";
 
-const CTA_COPY_OPTIONS = [
-  "learn more",
-  "download",
-  "apply now",
-  "show now",
-  "watch more",
-  "subscribe",
-  "sign up",
-  "book now",
-  "call now",
-  "Contact Us",
-  "listen now",
-  "get showtimes",
-  "order now",
-  "get directions",
-  "see menu",
-  "get quote",
-  "send message",
-  "request time",
-];
+type CtaButtonClasses = Partial<{
+  ctaButton: string;
+  copySelectionWrapper: string;
+  active: string;
+  editable: string;
+}>;
 
-const FacebookCtaButton = () => {
+interface Props {
+  classes: CtaButtonClasses;
+}
+
+const MockupCtaButton = ({ classes }: Props) => {
   const [showCopyOptions, setShowCopyOptions] = useState(false);
 
   const { ctaCopy, setCtaCopy } = useMockupContext();
@@ -32,14 +21,14 @@ const FacebookCtaButton = () => {
   return (
     <>
       <div
-        className={styles.ctaButton}
+        className={classes.ctaButton}
         onMouseEnter={() => setShowCopyOptions(true)}
         onMouseLeave={() => setShowCopyOptions(false)}
       >
-        <p className={facebookMockupStyles.editable}>{ctaCopy}</p>
+        <p className={classes.editable}>{ctaCopy}</p>
         {showCopyOptions && (
           <div
-            className={styles.copySelectionWrapper}
+            className={classes.copySelectionWrapper}
             onMouseEnter={() => setShowCopyOptions(true)}
             onMouseLeave={() => setShowCopyOptions(false)}
           >
@@ -48,7 +37,7 @@ const FacebookCtaButton = () => {
                 <li
                   key={i}
                   onClick={() => setCtaCopy(option)}
-                  className={option === ctaCopy ? `${styles.active}` : ""}
+                  className={option === ctaCopy ? `${classes.active}` : ""}
                 >
                   {option}
                 </li>
@@ -61,4 +50,4 @@ const FacebookCtaButton = () => {
   );
 };
 
-export default FacebookCtaButton;
+export default MockupCtaButton;

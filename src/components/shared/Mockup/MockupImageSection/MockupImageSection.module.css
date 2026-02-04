@@ -1,0 +1,8 @@
+.mobile {
+  width: 390px;
+  height: 388px;
+
+  & > img {
+    object-fit: cover;
+  }
+}

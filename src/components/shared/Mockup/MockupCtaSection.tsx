@@ -1,24 +1,20 @@
-import type { ComponentType } from "react";
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import EditableSpan from "../../shared/EditableSpan";
+import EditableSpan from "../EditableSpan";
 
-type CtaSectionClasses = {
+type CtaSectionClasses = Partial<{
   container: string;
   titleContainer: string;
   url: string;
   title: string;
   editable: string;
-};
+}>;
 
 interface Props {
   classes: CtaSectionClasses;
-  CtaButton?: ComponentType;
+  renderCtaButton?: () => React.ReactNode;
 }
 
-const GenericCtaSection = ({
-  classes,
-  CtaButton,
-}: Props) => {
+const MockupCtaSection = ({ classes, renderCtaButton }: Props) => {
   const {
     url,
     setUrl,
@@ -53,9 +49,9 @@ const GenericCtaSection = ({
         />
       </div>
 
-      {CtaButton && <CtaButton />}
+      {renderCtaButton?.()}
     </div>
   );
 };
 
-export default GenericCtaSection;
+export default MockupCtaSection;

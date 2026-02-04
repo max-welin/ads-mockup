@@ -1,12 +1,12 @@
 import { useMockupContext } from "../../hooks/useMockupContext";
 import Carousel from "./FacebookCarousel/Carousel";
-import FacebookCtaButton from "./FacebookCtaSection/FacebookCtaButton";
-import MockupCtaSection from "./FacebookCtaSection/FacebookCtaSection";
-import MokcupHeaderSection from "./FacebookHeader/FacebookHeader";
-import FacebookTextSection from "./FacebookHeader/FacebookTextSection";
-import MockupImageSection from "./FacebookImageSection/FacebookImgSection";
+import MockupHeaderSection from "../shared/Mockup/MockupHeaderSection";
+import FacebookTextSection from "./FacebookTextSection";
 import FacebookInteractionSection from "./FacebookInteractionSection/FacebookInteractionSection";
 import styles from "./FacebookMockup.module.css";
+import MockupImageSection from "../shared/Mockup/MockupImageSection/MockupImageSection";
+import MockupCtaSection from "../shared/Mockup/MockupCtaSection";
+import MockupCtaButton from "../shared/Mockup/MockupCtaButton";
 
 const FacebookMockup = () => {
   const { setShowImageButton, device, format } = useMockupContext();
@@ -19,7 +19,7 @@ const FacebookMockup = () => {
       onMouseEnter={() => setShowImageButton(true)}
       onMouseLeave={() => setShowImageButton(false)}
     >
-      <MokcupHeaderSection
+      <MockupHeaderSection
         classes={{
           container: styles.mockupHeader,
           imgContainer: styles.imgContainer,
@@ -41,7 +41,16 @@ const FacebookMockup = () => {
               title: styles.title,
               editable: styles.editable,
             }}
-            CtaButton={FacebookCtaButton}
+            renderCtaButton={() => (
+              <MockupCtaButton
+                classes={{
+                  ctaButton: styles.ctaButton,
+                  copySelectionWrapper: styles.copySelectionWrapper,
+                  active: styles.active,
+                  editable: styles.editable,
+                }}
+              />
+            )}
           />
         </>
       ) : format === "carousel" ? (

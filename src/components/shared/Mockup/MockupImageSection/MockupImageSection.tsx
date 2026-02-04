@@ -1,8 +1,8 @@
 import React from "react";
-import UploadImageInput from "../../shared/UploadImageInput";
-import { onImageChange } from "../../../utils/onImageChange";
-import { useMockupContext } from "../../../hooks/useMockupContext";
-import styles from "./FacebookImgSection.module.css";
+import styles from "./MockupImageSection.module.css";
+import { useMockupContext } from "../../../../hooks/useMockupContext";
+import { onImageChange } from "../../../../utils/onImageChange";
+import UploadImageInput from "../../UploadImageInput/UploadImageInput";
 
 interface Props {
   containerClass: string;

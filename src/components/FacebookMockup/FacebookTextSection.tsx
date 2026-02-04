@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import { useMockupContext } from "../../../hooks/useMockupContext";
-import styles from "../FacebookMockup.module.css";
-import EditableSpan from "../../shared/EditableSpan";
+import { useMockupContext } from "../../hooks/useMockupContext";
+import styles from "./FacebookMockup.module.css";
+import EditableSpan from "../shared/EditableSpan";
 
 const FacebookTextSection = () => {
   const { headerDescription, setHeaderDescription, device } =

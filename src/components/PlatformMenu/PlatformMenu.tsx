@@ -8,10 +8,16 @@ const PlatformMenu = () => {
 
   return (
     <div className={styles.menuContainer}>
-      <button onClick={() => setPlatform("facebook")} className={`${platform === "facebook" ? styles.active : ""}`}>
+      <button
+        onClick={() => setPlatform("facebook")}
+        className={`${platform === "facebook" ? styles.active : ""}`}
+      >
         <FacebookSvg />
       </button>
-      <button onClick={() => setPlatform("instagram")} className={`${platform === "instagram" ? styles.active : ""}`}>
+      <button
+        onClick={() => setPlatform("instagram")}
+        className={`${platform === "instagram" ? styles.active : ""}`}
+      >
         <InstagramSvg />
       </button>
     </div>

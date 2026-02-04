@@ -9,7 +9,6 @@ const InstagramSvg = ({ width = 30 }: Props) => {
       viewBox="0 0 24 24"
       width={width}
       xmlns="http://www.w3.org/2000/svg"
-      strokeWidth={5}
     >
       <title>Instagram</title>
       <path

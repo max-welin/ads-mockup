@@ -1,21 +1,21 @@
 import React from "react";
 
-interface EditableSpanProps extends React.HTMLAttributes<HTMLSpanElement> {
+interface Props extends React.HTMLAttributes<HTMLSpanElement> {
   text: string;
-  className: string;
+  className: string | undefined;
   onBlurFn: (value: string) => void;
   spanRef?: React.Ref<HTMLSpanElement>;
   maxLength?: number;
 }
 
-const EditableSpan: React.FC<EditableSpanProps> = ({
+const EditableSpan = ({
   text,
   className,
   onBlurFn,
   spanRef,
   maxLength,
   ...props
-}) => {
+}: Props) => {
   const handleBlur = (e: React.FocusEvent<HTMLSpanElement>) => {
     const rawText = e.currentTarget.textContent ?? "";
     const nextText = maxLength ? rawText.slice(0, maxLength - 3) : rawText;

@@ -1,17 +1,17 @@
 import { useMockupContext } from "../../../hooks/useMockupContext";
-import EditableSpan from "../../shared/EditableSpan";
-import UploadImageInput from "../../shared/UploadImageInput";
+import EditableSpan from "../EditableSpan";
+import UploadImageInput from "../UploadImageInput/UploadImageInput";
 import { onImageChange } from "../../../utils/onImageChange";
-import GlobeSvg from "../../shared/svg/GlobeSvg";
+import GlobeSvg from "../svg/GlobeSvg";
 import { Ellipsis, X } from "lucide-react";
 
-type HeaderSectionClasses = {
+type HeaderSectionClasses = Partial<{
   container: string;
   imgContainer: string;
   titleContainer: string;
   editable: string;
   buttonContainer: string;
-};
+}>;
 
 interface HeaderSectionProps {
   classes: HeaderSectionClasses;
@@ -19,16 +19,19 @@ interface HeaderSectionProps {
   showGlobe?: boolean;
 }
 
-const MokcupHeaderSection = ({
+const MockupHeaderSection = ({
   classes,
   showGlobe = false,
 }: HeaderSectionProps) => {
-  const { headerImg, setHeaderImg, headerTitle, setHeaderTitle } =
+  const { headerImg, setHeaderImg, headerTitle, setHeaderTitle, platform } =
     useMockupContext();
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onImageChange(e, setHeaderImg);
   };
+
+  const maxTitleLength =
+    platform === "facebook" ? 50 : platform === "instagram" ? 32 : 50;
 
   return (
     <div className={classes.container}>
@@ -42,16 +45,17 @@ const MokcupHeaderSection = ({
           className={classes.editable}
           text={headerTitle}
           onBlurFn={setHeaderTitle}
-          maxLength={50}
+          maxLength={maxTitleLength}
         />
-          <p>Sponsored
-            {showGlobe && (
-              <>
-                <span aria-hidden="true"> · </span>
-                <GlobeSvg />
-              </>
-            )}
-          </p>
+        <p>
+          Sponsored
+          {showGlobe && (
+            <>
+              <span aria-hidden="true"> · </span>
+              <GlobeSvg />
+            </>
+          )}
+        </p>
       </div>
 
       <div className={classes.buttonContainer}>
@@ -62,4 +66,4 @@ const MokcupHeaderSection = ({
   );
 };
 
-export default MokcupHeaderSection;
+export default MockupHeaderSection;

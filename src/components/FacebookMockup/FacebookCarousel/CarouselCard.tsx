@@ -1,6 +1,6 @@
 import { useMockupContext } from "../../../hooks/useMockupContext";
 import type { CarouselCardData } from "../../../models/mockup.models";
-import UploadImageInput from "../../shared/UploadImageInput";
+import UploadImageInput from "../../shared/UploadImageInput/UploadImageInput";
 import styles from "./Carousel.module.css";
 import CarouselCtaSection from "./CarouselCta/CarouselCtaSection";
 import CarouselRemoveCardButton from "./carouselButtons/CarouselRemoveCardButton";
@@ -16,7 +16,7 @@ const CarouselCard = ({ i, carouselCard, prevButton }: Props) => {
 
   const onImageChange = (
     e: React.ChangeEvent<HTMLInputElement>,
-    index: number
+    index: number,
   ) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -26,7 +26,7 @@ const CarouselCard = ({ i, carouselCard, prevButton }: Props) => {
       const result = reader.result as string;
 
       setCarouselCardData((prev) =>
-        prev.map((card, i) => (i === index ? { ...card, img: result } : card))
+        prev.map((card, i) => (i === index ? { ...card, img: result } : card)),
       );
     };
     reader.readAsDataURL(file);

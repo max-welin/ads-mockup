@@ -1,13 +1,13 @@
 import { SquarePen } from "lucide-react";
-import { useMockupContext } from "../../hooks/useMockupContext";
+import { useMockupContext } from "../../../hooks/useMockupContext";
 import styles from "./UploadImageInpus.module.css";
 
-interface UploadImageInpusProps {
+interface UploadImageInputProps {
   size: number;
   onChangeFn: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const UploadImageInput = ({ size, onChangeFn }: UploadImageInpusProps) => {
+const UploadImageInput = ({ size, onChangeFn }: UploadImageInputProps) => {
   const { showImageButton, format } = useMockupContext();
 
   const margin = format === "native" ? "auto" : "5% 5%";

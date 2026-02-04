@@ -6,7 +6,7 @@ import { useMockupContext } from "../../../hooks/useMockupContext";
 import type { CarouselCardData } from "../../../models/mockup.models";
 import CarouselCard from "./CarouselCard";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import CarouselAddCardButton from "./carouselButtons/CarouselAddCardButton";
 import { NextArrow, PrevArrow } from "./carouselButtons/CarouselButtons";
 
