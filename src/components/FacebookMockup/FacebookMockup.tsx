@@ -4,7 +4,7 @@ import FacebookCtaButton from "./FacebookCtaSection/FacebookCtaButton";
 import MockupCtaSection from "./FacebookCtaSection/FacebookCtaSection";
 import MokcupHeaderSection from "./FacebookHeader/FacebookHeader";
 import FacebookTextSection from "./FacebookHeader/FacebookTextSection";
-import FacebookImgSection from "./FacebookImageSection/FacebookImgSection";
+import MockupImageSection from "./FacebookImageSection/FacebookImgSection";
 import FacebookInteractionSection from "./FacebookInteractionSection/FacebookInteractionSection";
 import styles from "./FacebookMockup.module.css";
 
@@ -32,7 +32,7 @@ const FacebookMockup = () => {
       <FacebookTextSection />
       {format === "native" ? (
         <>
-          <FacebookImgSection />
+          <MockupImageSection containerClass={styles.imgSectionImgContainer} />
           <MockupCtaSection
             classes={{
               container: styles.ctaContainer,
